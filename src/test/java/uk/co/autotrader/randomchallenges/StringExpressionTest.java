@@ -59,12 +59,11 @@ public class StringExpressionTest {
     }
 
     @Test
-    public void shouldTakeTwoMultipleDigitNumbersAndAddThemTogether(){
+    public void shouldTakeTwoMultipleDigitNumbersAndAddThemTogether() {
         String input = "onezerozeroplustwozero";
 
         String result = stringExpression.stringExpression(input);
 
         Assertions.assertThat(result).isEqualTo("onetwozero");
     }
-
 }

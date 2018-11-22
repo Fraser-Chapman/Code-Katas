@@ -32,7 +32,7 @@ public class StringExpression {
         return resultAsString;
     }
 
-    public static Integer constructNumber1(StringExpressionObject stringExpressionObject) {
+    private static Integer constructNumber1(StringExpressionObject stringExpressionObject) {
 
         int operatorPosition = stringExpressionObject.operatorPosition;
         String number1 = "";
@@ -50,10 +50,10 @@ public class StringExpression {
                 stringExpressionObject.operatorPosition = i;
                 stringExpressionObject.operator = stringExpressionObject.convertedInput.charAt(stringExpressionObject.operatorPosition);
                 break;
-            } else if (i + 1 <= stringExpressionObject.convertedInput.length() &&
-                    stringExpressionObject.convertedInput.charAt(i + 1) != '+' &&
-                    stringExpressionObject.convertedInput.charAt(i + 1) != '-' &&
-                    stringExpressionObject.convertedInput.charAt(i + 1) != '/' &&
+            } else if (i + 1 <= stringExpressionObject.convertedInput.length() ||
+                    stringExpressionObject.convertedInput.charAt(i + 1) != '+' ||
+                    stringExpressionObject.convertedInput.charAt(i + 1) != '-' ||
+                    stringExpressionObject.convertedInput.charAt(i + 1) != '/' ||
                     stringExpressionObject.convertedInput.charAt(i + 1) != '*') {
                 number1 += stringExpressionObject.convertedInput.substring(i, i + 1);
 
@@ -69,7 +69,7 @@ public class StringExpression {
         return result;
     }
 
-    public static Integer constructNumber2(StringExpressionObject stringExpressionObject) {
+    private static Integer constructNumber2(StringExpressionObject stringExpressionObject) {
         int operatorPosition = stringExpressionObject.operatorPosition;
         String number2 = "";
         int result = 0;
@@ -93,8 +93,8 @@ public class StringExpression {
         return result;
     }
 
-    public static String convertResultToString(Integer resultAsInt) {
-        String resultAsString = resultAsInt.toString()
+    private static String convertResultToString(Integer resultAsInt) {
+        return resultAsInt.toString()
                 .replace("+", "")
                 .replace("-", "negative")
                 .replace("0", "zero")
@@ -108,8 +108,6 @@ public class StringExpression {
                 .replace("8", "eight")
                 .replace("9", "nine")
                 .trim();
-
-        return resultAsString;
     }
 
     public static void main(String[] args) {
