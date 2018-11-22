@@ -25,11 +25,9 @@ public class StringExpressionObject {
                 .replace("nine", "9");
 
         this.numberOfValues = amountOfValuesInConvertedInput();
-
     }
 
     private Integer amountOfValuesInConvertedInput(){
-        int result;
         int numberOfOperators = 0;
 
         for (int i = 0; i < convertedInput.length(); i++){
@@ -41,8 +39,6 @@ public class StringExpressionObject {
                 numberOfOperators += 1;
             }
         }
-        result = numberOfOperators + 1;
-
-        return result;
+        return numberOfOperators + 1;
     }
 }

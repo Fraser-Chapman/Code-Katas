@@ -66,4 +66,13 @@ public class StringExpressionTest {
 
         Assertions.assertThat(result).isEqualTo("onetwozero");
     }
+//
+//    @Test
+//    public void shouldTakeAnExpressionContainingThreeValuesAndReturnCorrectResult() {
+//        String input = "oneplusoneplusone";
+//
+//        String result = stringExpression.stringExpression(input);
+//
+//        Assertions.assertThat(result).isEqualTo("three");
+//    }
 }

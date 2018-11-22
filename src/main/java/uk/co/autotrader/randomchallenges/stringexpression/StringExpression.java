@@ -1,5 +1,8 @@
 package uk.co.autotrader.randomchallenges.stringexpression;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class StringExpression {
 
     public static String stringExpression(String input) {
@@ -11,25 +14,35 @@ public class StringExpression {
         // new number1 and then the next number and add that I came up with this for loop which keeps looping through the expression until
         // it has added every number. It shouldn't work but it is doing (i think).
 
-        for(int i = 0; i < stringExpressionObject.numberOfValues; i++) {
+        for (int i = 0; i < stringExpressionObject.numberOfValues; i++) {
             int number1 = StringExpression.constructNumber1(stringExpressionObject);
             int number2 = StringExpression.constructNumber2(stringExpressionObject);
 
-            if (stringExpressionObject.operator == '+') {
-                resultAsInt = number1 + number2;
-            } else if (stringExpressionObject.operator == '-') {
-                resultAsInt = number1 - number2;
-            } else if (stringExpressionObject.operator == '*') {
-                resultAsInt = number1 * number2;
-            } else {
-                resultAsInt = number1 / number2;
+            //TODO make default throw a custom exception?
+            switch (stringExpressionObject.operator) {
+                case '+':
+                    resultAsInt = number1 + number2;
+                    break;
+
+                case '-':
+                    resultAsInt = number1 - number2;
+                    break;
+
+                case '*':
+                    resultAsInt = number1 * number2;
+                    break;
+
+                case '/':
+                    resultAsInt = number1 / number2;
+                    break;
+
+                default:
+                    System.out.println("Invalid operator was used");
+                    resultAsInt = 0;
             }
         }
 
-
-        String resultAsString = StringExpression.convertResultToString(resultAsInt);
-
-        return resultAsString;
+        return StringExpression.convertResultToString(resultAsInt);
     }
 
     private static Integer constructNumber1(StringExpressionObject stringExpressionObject) {
@@ -41,20 +54,14 @@ public class StringExpression {
             if (i == 0) {
                 number1 += stringExpressionObject.convertedInput.substring(i, i + 1);
 
-            } else if ((stringExpressionObject.convertedInput.charAt(i) == '+') ||
-                    stringExpressionObject.convertedInput.charAt(i) == '-' ||
-                    stringExpressionObject.convertedInput.charAt(i) == '/' ||
-                    stringExpressionObject.convertedInput.charAt(i) == '*') {
+            } else if (isOperator(stringExpressionObject.convertedInput.charAt(i))) {
                 //we have the complete number
                 result = Integer.parseInt(number1);
                 stringExpressionObject.operatorPosition = i;
                 stringExpressionObject.operator = stringExpressionObject.convertedInput.charAt(stringExpressionObject.operatorPosition);
                 break;
-            } else if (i + 1 <= stringExpressionObject.convertedInput.length() ||
-                    stringExpressionObject.convertedInput.charAt(i + 1) != '+' ||
-                    stringExpressionObject.convertedInput.charAt(i + 1) != '-' ||
-                    stringExpressionObject.convertedInput.charAt(i + 1) != '/' ||
-                    stringExpressionObject.convertedInput.charAt(i + 1) != '*') {
+
+            } else if (i + 1 <= stringExpressionObject.convertedInput.length() || !isOperator(stringExpressionObject.convertedInput.charAt(i))) {
                 number1 += stringExpressionObject.convertedInput.substring(i, i + 1);
 
             } else {
@@ -78,13 +85,10 @@ public class StringExpression {
                 number2 += stringExpressionObject.convertedInput.substring(i);
                 result = Integer.parseInt(number2);
                 break;
-            } else if (i + 1 < stringExpressionObject.convertedInput.length() &&
-                    stringExpressionObject.convertedInput.charAt(i + 1) != '+' &&
-                    stringExpressionObject.convertedInput.charAt(i + 1) != '-' &&
-                    stringExpressionObject.convertedInput.charAt(i + 1) != '/' &&
-                    stringExpressionObject.convertedInput.charAt(i + 1) != '*') {
 
+            } else if (i + 1 < stringExpressionObject.convertedInput.length() && !isOperator(stringExpressionObject.convertedInput.charAt(i))) {
                 number2 += stringExpressionObject.convertedInput.substring(i, i + 1);
+
             } else {
                 result = Integer.parseInt(number2);
                 break;
@@ -110,8 +114,15 @@ public class StringExpression {
                 .trim();
     }
 
-    public static void main(String[] args) {
+    private static boolean isOperator(Character input) {
+        List<Character> operators = Arrays.asList('+', '-', '*', '/');
 
-        System.out.println(StringExpression.stringExpression("oneplusone"));
+        for (Character operator : operators) {
+            if (input.equals(operator)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
