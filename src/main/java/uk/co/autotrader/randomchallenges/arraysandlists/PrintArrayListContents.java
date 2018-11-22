@@ -1,4 +1,4 @@
-package uk.co.autotrader.randomchallenges;
+package uk.co.autotrader.randomchallenges.arraysandlists;
 
 import java.util.ArrayList;
 import java.util.List;
