@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="uk.co.autotrader.challenges.tripletrouble.TripleTroubleTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2018-10-17T14:18:07" hostname="MCR-AL32360" time="0.042">
+  <properties/>
+  <testcase name="givenNumbersContainingTheMatchingDoubleThenDoubleInNumTwoShouldReturnTrue" classname="uk.co.autotrader.challenges.tripletrouble.TripleTroubleTest" time="0.037"/>
+  <testcase name="givenNumbersContainingTripleThenTripleInNumOneShouldReturnTrue" classname="uk.co.autotrader.challenges.tripletrouble.TripleTroubleTest" time="0.0"/>
+  <testcase name="givenNumbersContainingNoDoubleThenDoubleInNumTwoShouldReturnFalse" classname="uk.co.autotrader.challenges.tripletrouble.TripleTroubleTest" time="0.0"/>
+  <testcase name="givenNumbersContainingMismatchedDoubleThenDoubleInNumTwoShouldReturnFalse" classname="uk.co.autotrader.challenges.tripletrouble.TripleTroubleTest" time="0.0"/>
+  <testcase name="givenNumbersNotContainingTripleThenTripleInNumOneShouldReturnFalse" classname="uk.co.autotrader.challenges.tripletrouble.TripleTroubleTest" time="0.0"/>
+  <testcase name="givenNumbersWhereDoubleDoesNotMatchTripleThenReturnZero" classname="uk.co.autotrader.challenges.tripletrouble.TripleTroubleTest" time="0.002"/>
+  <testcase name="givenNumbersWhereNoTriplesThenReturnZero" classname="uk.co.autotrader.challenges.tripletrouble.TripleTroubleTest" time="0.0"/>
+  <testcase name="givenNumbersWhereIsTripleAndIsDoubleAndTheyMatchThenShouldReturnOne" classname="uk.co.autotrader.challenges.tripletrouble.TripleTroubleTest" time="0.0"/>
+  <testcase name="givenNumbersWhereNoDoublesThenReturnZero" classname="uk.co.autotrader.challenges.tripletrouble.TripleTroubleTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -18,5 +18,4 @@ public class ExtractPortionOfArrayList {
 
         System.out.println(hiddenMessage);
     }
-
 }
