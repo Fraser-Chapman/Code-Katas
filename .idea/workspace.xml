@@ -588,7 +588,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542894315592" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542894370412" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -623,20 +623,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ReplaceSecondElement">
-    <configuration name="CloneList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.arraysandlists.CloneList" />
-      <module name="Code_Wars_main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.arraysandlists.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.PrintListUsingIndex">
     <configuration name="EmptyAList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.arraysandlists.EmptyAList" />
       <module name="Code_Wars_main" />
@@ -652,6 +639,19 @@
     </configuration>
     <configuration name="IncreaseSize" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.arraysandlists.IncreaseSize" />
+      <module name="Code_Wars_main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.arraysandlists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrintListUsingIndex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.arraysandlists.PrintListUsingIndex" />
       <module name="Code_Wars_main" />
       <extension name="coverage">
         <pattern>
@@ -690,19 +690,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.CloneList" />
       <item itemvalue="Application.EmptyAList" />
       <item itemvalue="Application.TestIfListIsEmpty" />
       <item itemvalue="Application.IncreaseSize" />
       <item itemvalue="Application.ReplaceSecondElement" />
+      <item itemvalue="Application.PrintListUsingIndex" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PrintListUsingIndex" />
         <item itemvalue="Application.ReplaceSecondElement" />
         <item itemvalue="Application.IncreaseSize" />
         <item itemvalue="Application.TestIfListIsEmpty" />
         <item itemvalue="Application.EmptyAList" />
-        <item itemvalue="Application.CloneList" />
       </list>
     </recent_temporary>
   </component>
