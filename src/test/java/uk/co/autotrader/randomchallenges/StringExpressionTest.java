@@ -3,6 +3,7 @@ package uk.co.autotrader.randomchallenges;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
+import uk.co.autotrader.randomchallenges.stringexpression.StringExpression;
 
 public class StringExpressionTest {
     StringExpression stringExpression;

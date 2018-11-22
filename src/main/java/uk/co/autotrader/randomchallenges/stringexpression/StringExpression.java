@@ -1,4 +1,4 @@
-package uk.co.autotrader.randomchallenges;
+package uk.co.autotrader.randomchallenges.stringexpression;
 
 public class StringExpression {
 
