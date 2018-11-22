@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebdd8f42-6ae6-4683-a9fb-5413e6aebe43" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/JoinTwoLists.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CloneList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -66,13 +66,13 @@
         <counts>
           <entry key="gradle" value="2" />
           <entry key="gradlew" value="1" />
-          <entry key="java" value="51" />
+          <entry key="java" value="53" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="2" />
-          <entry key="JAVA" value="51" />
+          <entry key="JAVA" value="53" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -80,15 +80,15 @@
         <counts>
           <entry key="dummy" value="21" />
           <entry key="gradle" value="2" />
-          <entry key="java" value="18819" />
-          <entry key="txt" value="275" />
+          <entry key="java" value="19083" />
+          <entry key="txt" value="277" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="2" />
-          <entry key="JAVA" value="18819" />
-          <entry key="PLAIN_TEXT" value="296" />
+          <entry key="JAVA" value="19083" />
+          <entry key="PLAIN_TEXT" value="298" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -112,10 +112,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/JoinTwoLists.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CloneList.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="352" column="18" selection-start-line="352" selection-start-column="18" selection-end-line="352" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/JoinTwoLists.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -470,6 +491,7 @@
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CompareTwoLists.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/SwapTwoElements.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/JoinTwoLists.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CloneList.java" />
       </list>
     </option>
   </component>
@@ -552,7 +574,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542887607746" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542891586533" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -587,7 +609,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.JoinTwoLists">
+  <component name="RunManager" selected="Application.CloneList">
+    <configuration name="CloneList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.arraysandlists.CloneList" />
+      <module name="Code_Wars_main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.arraysandlists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CompareTwoLists" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.arraysandlists.CompareTwoLists" />
       <module name="Code_Wars_main" />
@@ -627,19 +662,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReverseList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.arraysandlists.ReverseList" />
-      <module name="Code_Wars_main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.arraysandlists.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SwapTwoElements" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.arraysandlists.SwapTwoElements" />
       <module name="Code_Wars_main" />
@@ -654,19 +676,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ReverseList" />
       <item itemvalue="Application.ExtractPortionOfArrayList" />
       <item itemvalue="Application.CompareTwoLists" />
       <item itemvalue="Application.SwapTwoElements" />
       <item itemvalue="Application.JoinTwoLists" />
+      <item itemvalue="Application.CloneList" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CloneList" />
         <item itemvalue="Application.JoinTwoLists" />
         <item itemvalue="Application.SwapTwoElements" />
         <item itemvalue="Application.CompareTwoLists" />
         <item itemvalue="Application.ExtractPortionOfArrayList" />
-        <item itemvalue="Application.ReverseList" />
       </list>
     </recent_temporary>
   </component>
@@ -702,7 +724,7 @@
       <workItem from="1541796688299" duration="1831000" />
       <workItem from="1542012424460" duration="19000" />
       <workItem from="1542824433958" duration="920000" />
-      <workItem from="1542876292478" duration="6611000" />
+      <workItem from="1542876292478" duration="7578000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit of all code wars challenges I have completed so far.">
       <created>1542877251914</created>
@@ -809,7 +831,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542887237742</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Completed challenge &quot;Write a Java program to join two array lists&quot;">
+      <created>1542887640458</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1542887640458</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -845,7 +874,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68940000" />
+    <option name="totallyTimeSpent" value="69907000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -860,13 +889,13 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3421687" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3421687" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32771084" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32771084" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32650602" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
@@ -939,7 +968,8 @@
     <MESSAGE value="Completed challenge &quot;Write a Java program to reverse elements in a array list&quot;." />
     <MESSAGE value="Completed challenge &quot;Write a Java program to extract a portion of a array list.&quot;" />
     <MESSAGE value="Completed challenge &quot;Write a Java program of swap two elements in an array list.&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed challenge &quot;Write a Java program of swap two elements in an array list.&quot;" />
+    <MESSAGE value="Completed challenge &quot;Write a Java program to join two array lists&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed challenge &quot;Write a Java program to join two array lists&quot;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -1213,6 +1243,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/JoinTwoLists.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="352" column="18" selection-start-line="352" selection-start-column="18" selection-end-line="352" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CloneList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
