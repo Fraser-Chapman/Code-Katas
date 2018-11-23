@@ -1,25 +1,43 @@
 package uk.co.autotrader.randomchallenges.stringexpression;
 
+import uk.co.autotrader.randomchallenges.stringexpression.exceptions.InvalidOperatorException;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class StringExpression {
+    static String convertedInput;
+    static Character operator;
 
-    public static String stringExpression(String input) {
-        int resultAsInt = 0;
+    public String stringExpression(String input) {
+        convertedInput = input.toLowerCase()
+                .replace("plus", "+")
+                .replace("minus", "-")
+                .replace("dividedby", "/")
+                .replace("times", "*")
+                .replace("zero", "0")
+                .replace("one", "1")
+                .replace("two", "2")
+                .replace("three", "3")
+                .replace("four", "4")
+                .replace("five", "5")
+                .replace("six", "6")
+                .replace("seven", "7")
+                .replace("eight", "8")
+                .replace("nine", "9");
 
-        StringExpressionObject stringExpressionObject = new StringExpressionObject(input);
+        int numberOfValues = amountOfValuesInConvertedInput(convertedInput);
+        int resultAsInt;
+        int number1 = 0;
+        int number2 = 0;
 
-        //Attempting to make the program construct number 1 and number 2 and then add them. Then I want it to get the
-        // new number1 and then the next number and add that I came up with this for loop which keeps looping through the expression until
-        // it has added every number. It shouldn't work but it is doing (i think).
+        for (int i = 0; i < numberOfValues; i++) {
+            number1 = StringExpression.constructNumber(convertedInput);
+            number2 = StringExpression.constructNumber(convertedInput);
 
-        for (int i = 0; i < stringExpressionObject.numberOfValues; i++) {
-            int number1 = StringExpression.constructNumber1(stringExpressionObject);
-            int number2 = StringExpression.constructNumber2(stringExpressionObject);
 
-            //TODO make default throw a custom exception?
-            switch (stringExpressionObject.operator) {
+        }
+            switch (operator) {
                 case '+':
                     resultAsInt = number1 + number2;
                     break;
@@ -37,64 +55,37 @@ public class StringExpression {
                     break;
 
                 default:
-                    System.out.println("Invalid operator was used");
-                    resultAsInt = 0;
+                    throw new InvalidOperatorException("Invalid operator was used");
             }
-        }
 
         return StringExpression.convertResultToString(resultAsInt);
     }
 
-    private static Integer constructNumber1(StringExpressionObject stringExpressionObject) {
+    private static Integer constructNumber(String expression) {
+        String number = "";
 
-        int operatorPosition = stringExpressionObject.operatorPosition;
-        String number1 = "";
-        int result = 0;
-        for (int i = (operatorPosition + 1); i <= stringExpressionObject.convertedInput.length(); i++) {
-            if (i == 0) {
-                number1 += stringExpressionObject.convertedInput.substring(i, i + 1);
-
-            } else if (isOperator(stringExpressionObject.convertedInput.charAt(i))) {
-                //we have the complete number
-                result = Integer.parseInt(number1);
-                stringExpressionObject.operatorPosition = i;
-                stringExpressionObject.operator = stringExpressionObject.convertedInput.charAt(stringExpressionObject.operatorPosition);
-                break;
-
-            } else if (i + 1 <= stringExpressionObject.convertedInput.length() || !isOperator(stringExpressionObject.convertedInput.charAt(i))) {
-                number1 += stringExpressionObject.convertedInput.substring(i, i + 1);
-
-            } else {
-                //we have the complete number
-                result = Integer.parseInt(number1);
-                stringExpressionObject.operatorPosition = i + 1;
-                stringExpressionObject.operator = stringExpressionObject.convertedInput.charAt(stringExpressionObject.operatorPosition);
+        for (int i = 0; i <= expression.length(); i++) {
+            if (i + 1 == expression.length()) {
+                number += expression.substring(i);
+                convertedInput = "";
                 break;
             }
-        }
-
-        return result;
-    }
-
-    private static Integer constructNumber2(StringExpressionObject stringExpressionObject) {
-        int operatorPosition = stringExpressionObject.operatorPosition;
-        String number2 = "";
-        int result = 0;
-        for (int i = (operatorPosition + 1); i <= stringExpressionObject.convertedInput.length(); i++) {
-            if (i == stringExpressionObject.convertedInput.length() - 1) {
-                number2 += stringExpressionObject.convertedInput.substring(i);
-                result = Integer.parseInt(number2);
-                break;
-
-            } else if (i + 1 < stringExpressionObject.convertedInput.length() && !isOperator(stringExpressionObject.convertedInput.charAt(i))) {
-                number2 += stringExpressionObject.convertedInput.substring(i, i + 1);
-
-            } else {
-                result = Integer.parseInt(number2);
+            else if (isOperator(convertedInput.charAt(i + 1))) {
+                number += convertedInput.substring(i, i + 1);
+                operator = convertedInput.charAt(i + 1);
+                convertedInput = convertedInput.substring(i + 1);
                 break;
             }
+            else if (isOperator(convertedInput.charAt(i))) {
+
+            }
+            else if (!isOperator(convertedInput.charAt(i + 1))) {
+                number += convertedInput.substring(i, i + 1);
+            }
+
         }
-        return result;
+
+        return Integer.parseInt(number);
     }
 
     private static String convertResultToString(Integer resultAsInt) {
@@ -124,5 +115,21 @@ public class StringExpression {
         }
 
         return false;
+    }
+
+    private Integer amountOfValuesInConvertedInput(String convertedInput){
+        int numberOfOperators = 0;
+
+        for (int i = 0; i < convertedInput.length(); i++){
+            if(convertedInput.substring(i, i + 1) == "+" ||
+                    convertedInput.substring(i, i + 1) == "-" ||
+                    convertedInput.substring(i, i + 1) == "*" ||
+                    convertedInput.substring(i, i + 1) == "/") {
+
+                //number of operators is always one less than the number of values
+                numberOfOperators += 1;
+            }
+        }
+        return numberOfOperators + 1;
     }
 }

@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 import uk.co.autotrader.randomchallenges.stringexpression.StringExpression;
+import uk.co.autotrader.randomchallenges.stringexpression.exceptions.InvalidOperatorException;
 
 public class StringExpressionTest {
     StringExpression stringExpression;
@@ -66,13 +67,20 @@ public class StringExpressionTest {
 
         Assertions.assertThat(result).isEqualTo("onetwozero");
     }
+
+    @Test
+    public void shouldTakeAnExpressionContainingThreeValuesAndReturnCorrectResult() {
+        String input = "oneplusoneplusone";
+
+        String result = stringExpression.stringExpression(input);
+
+        Assertions.assertThat(result).isEqualTo("three");
+    }
 //
-//    @Test
-//    public void shouldTakeAnExpressionContainingThreeValuesAndReturnCorrectResult() {
-//        String input = "oneplusoneplusone";
+//    @Test (expected = InvalidOperatorException.class)
+//    public void shouldThrowInvalidOperatorException() {
+//        String input = "onemodulustwo";
 //
 //        String result = stringExpression.stringExpression(input);
-//
-//        Assertions.assertThat(result).isEqualTo("three");
 //    }
 }
