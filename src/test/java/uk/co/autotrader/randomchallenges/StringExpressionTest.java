@@ -84,6 +84,15 @@ public class StringExpressionTest {
 
         Assertions.assertThat(result).isEqualTo("fourzero");
     }
+
+    @Test
+    public void shouldTakeExpressionContainingTenValues() {
+        String input = "twoplusfiveplussixminusonezerotimesthreeplusfourplusfivedividedbysixtimesonetwotimesonezero";
+
+        String result = stringExpression.stringExpression(input);
+
+        Assertions.assertThat(result).isEqualTo("threesixzero");
+    }
 //    @Test
 //    public void shouldCalculateExpressionUsingPrecedence(){
 //        String input = "twoplustwoonedividedbyseven";

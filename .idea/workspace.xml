@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebdd8f42-6ae6-4683-a9fb-5413e6aebe43" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -51,11 +51,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+            <state relative-caret-position="1497">
+              <caret line="102" column="1" lean-forward="true" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
+            <state relative-caret-position="678">
+              <caret line="93" column="64" selection-start-line="93" selection-start-column="64" selection-end-line="93" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,8 +152,8 @@
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughAllElements.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughListStartingAtSpecific.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateInReverseOrder.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java" />
       </list>
     </option>
   </component>
@@ -193,12 +193,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
-            <path>
-              <item name="Code Wars" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code Wars" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -216,7 +210,7 @@
     <property name="LombokPluginIS_VAL_Enabled" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543415388465" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543415426619" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -251,22 +245,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in Code_Wars_test">
+  <component name="RunManager" selected="JUnit.StringExpressionTest.shouldTakeExpressionContainingTenValues">
     <configuration name="IterateInReverseOrder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.linkedlists.IterateInReverseOrder" />
-      <module name="Code_Wars_main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.linkedlists.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IterateThroughAllElements" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.linkedlists.IterateThroughAllElements" />
       <module name="Code_Wars_main" />
       <extension name="coverage">
         <pattern>
@@ -313,20 +294,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StringExpressionTest.shouldTakeExpressionContainingTenValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Code_Wars_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.StringExpressionTest" />
+      <option name="METHOD_NAME" value="shouldTakeExpressionContainingTenValues" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.IterateThroughAllElements" />
       <item itemvalue="Application.IterateThroughListStartingAtSpecific" />
       <item itemvalue="Application.IterateInReverseOrder" />
       <item itemvalue="JUnit.StringExpressionTest" />
       <item itemvalue="JUnit.All in Code_Wars_test" />
+      <item itemvalue="JUnit.StringExpressionTest.shouldTakeExpressionContainingTenValues" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StringExpressionTest.shouldTakeExpressionContainingTenValues" />
         <item itemvalue="JUnit.All in Code_Wars_test" />
         <item itemvalue="JUnit.StringExpressionTest" />
         <item itemvalue="Application.IterateInReverseOrder" />
         <item itemvalue="Application.IterateThroughListStartingAtSpecific" />
-        <item itemvalue="Application.IterateThroughAllElements" />
       </list>
     </recent_temporary>
   </component>
@@ -551,9 +548,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="StringExpressionTest - 2018.11.28 at 14h 02m 17s.xml">
-      <configuration name="StringExpressionTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="StringExpressionTest - 2018.11.28 at 14h 03m 24s.xml">
       <configuration name="StringExpressionTest" configurationId="JUnit" />
     </history-entry>
@@ -581,14 +575,18 @@
     <history-entry file="All_in_Code_Wars_test - 2018.11.28 at 14h 20m 36s.xml">
       <configuration name="All in Code_Wars_test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_Code_Wars_test - 2018.11.28 at 14h 30m 28s.xml">
+      <configuration name="All in Code_Wars_test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94886000" />
+    <option name="totallyTimeSpent" value="95528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24248926" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24248926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1014,8 +1012,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+        <state relative-caret-position="1497">
+          <caret line="102" column="1" lean-forward="true" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1024,8 +1022,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
+        <state relative-caret-position="678">
+          <caret line="93" column="64" selection-start-line="93" selection-start-column="64" selection-end-line="93" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
