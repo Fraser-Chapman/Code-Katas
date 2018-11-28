@@ -11,20 +11,20 @@ public class StringExpression {
 
     public String stringExpression(String input) {
         convertedInput = input.toLowerCase()
-                .replace("plus", "+")
-                .replace("minus", "-")
-                .replace("dividedby", "/")
-                .replace("times", "*")
-                .replace("zero", "0")
-                .replace("one", "1")
-                .replace("two", "2")
-                .replace("three", "3")
-                .replace("four", "4")
-                .replace("five", "5")
-                .replace("six", "6")
-                .replace("seven", "7")
-                .replace("eight", "8")
-                .replace("nine", "9");
+                .replace(Expression.PLUS.getKey(), Expression.PLUS.getValue())
+                .replace(Expression.MINUS.getKey(), Expression.MINUS.getValue())
+                .replace(Expression.DIVIDEDBY.getKey(), Expression.DIVIDEDBY.getValue())
+                .replace(Expression.TIMES.getKey(), Expression.TIMES.getValue())
+                .replace(Expression.ZERO.getKey(), Expression.ZERO.getValue())
+                .replace(Expression.ONE.getKey(), Expression.ONE.getValue())
+                .replace(Expression.TWO.getKey(), Expression.TWO.getValue())
+                .replace(Expression.THREE.getKey(), Expression.THREE.getValue())
+                .replace(Expression.FOUR.getKey(), Expression.FOUR.getValue())
+                .replace(Expression.FIVE.getKey(), Expression.FIVE.getValue())
+                .replace(Expression.SIX.getKey(), Expression.SIX.getValue())
+                .replace(Expression.SEVEN.getKey(), Expression.SEVEN.getValue())
+                .replace(Expression.EIGHT.getKey(), Expression.EIGHT.getValue())
+                .replace(Expression.NINE.getKey(), Expression.NINE.getValue());
 
         int numberOfValues = amountOfValuesInConvertedInput(convertedInput);
         int resultAsInt;
@@ -90,18 +90,17 @@ public class StringExpression {
 
     private static String convertResultToString(Integer resultAsInt) {
         return resultAsInt.toString()
-                .replace("+", "")
-                .replace("-", "negative")
-                .replace("0", "zero")
-                .replace("1", "one")
-                .replace("2", "two")
-                .replace("3", "three")
-                .replace("4", "four")
-                .replace("5", "five")
-                .replace("6", "six")
-                .replace("7", "seven")
-                .replace("8", "eight")
-                .replace("9", "nine")
+                .replace(Expression.MINUS.getValue(), Expression.MINUS.getKey())
+                .replace(Expression.ZERO.getValue(), Expression.ZERO.getKey())
+                .replace(Expression.ONE.getValue(), Expression.ONE.getKey())
+                .replace(Expression.TWO.getValue(), Expression.TWO.getKey())
+                .replace(Expression.THREE.getValue(), Expression.THREE.getKey())
+                .replace(Expression.FOUR.getValue(), Expression.FOUR.getKey())
+                .replace(Expression.FIVE.getValue(), Expression.FIVE.getKey())
+                .replace(Expression.SIX.getValue(), Expression.SIX.getKey())
+                .replace(Expression.SEVEN.getValue(), Expression.SEVEN.getKey())
+                .replace(Expression.EIGHT.getValue(), Expression.EIGHT.getKey())
+                .replace(Expression.NINE.getValue(), Expression.NINE.getKey())
                 .trim();
     }
 

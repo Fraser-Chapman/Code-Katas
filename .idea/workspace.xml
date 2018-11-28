@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebdd8f42-6ae6-4683-a9fb-5413e6aebe43" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughAllElements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughListStartingAtSpecific.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/Expression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java" afterDir="false" />
@@ -55,20 +55,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/AppendItemToEndOfList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughAllElements.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughListStartingAtSpecific.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+            <state relative-caret-position="405">
+              <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,6 +144,7 @@
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/Expression.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/AppendItemToEndOfList.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughAllElements.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughListStartingAtSpecific.java" />
       </list>
     </option>
   </component>
@@ -169,7 +164,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -226,6 +220,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -240,7 +235,7 @@
     <property name="LombokPluginIS_VAL_Enabled" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543229204118" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543410327980" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -275,7 +270,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.IterateThroughAllElements">
+  <component name="RunManager" selected="Application.IterateThroughListStartingAtSpecific">
     <configuration name="AppendItemToEndOfList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.linkedlists.AppendItemToEndOfList" />
       <module name="Code_Wars_main" />
@@ -302,6 +297,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="IterateThroughListStartingAtSpecific" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.linkedlists.IterateThroughListStartingAtSpecific" />
+      <module name="Code_Wars_main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.linkedlists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StringExpressionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Code_Wars_test" />
       <extension name="coverage">
@@ -312,22 +320,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges" />
       <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.StringExpressionTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StringExpressionTest.shouldTakeAnExpressionContainingThreeValuesAndReturnCorrectResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Code_Wars_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.StringExpressionTest" />
-      <option name="METHOD_NAME" value="shouldTakeAnExpressionContainingThreeValuesAndReturnCorrectResult" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -349,19 +341,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.StringExpressionTest" />
-      <item itemvalue="JUnit.StringExpressionTest.shouldTakeTwoSingleDigitNumbersAndMultiplyThem" />
-      <item itemvalue="JUnit.StringExpressionTest.shouldTakeAnExpressionContainingThreeValuesAndReturnCorrectResult" />
       <item itemvalue="Application.AppendItemToEndOfList" />
       <item itemvalue="Application.IterateThroughAllElements" />
+      <item itemvalue="JUnit.StringExpressionTest" />
+      <item itemvalue="JUnit.StringExpressionTest.shouldTakeTwoSingleDigitNumbersAndMultiplyThem" />
+      <item itemvalue="Application.IterateThroughListStartingAtSpecific" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.IterateThroughListStartingAtSpecific" />
         <item itemvalue="Application.IterateThroughAllElements" />
         <item itemvalue="Application.AppendItemToEndOfList" />
         <item itemvalue="JUnit.StringExpressionTest" />
         <item itemvalue="JUnit.StringExpressionTest.shouldTakeTwoSingleDigitNumbersAndMultiplyThem" />
-        <item itemvalue="JUnit.StringExpressionTest.shouldTakeAnExpressionContainingThreeValuesAndReturnCorrectResult" />
       </list>
     </recent_temporary>
   </component>
@@ -403,7 +395,8 @@
       <workItem from="1542961690609" duration="11147000" />
       <workItem from="1542981825279" duration="698000" />
       <workItem from="1542988036713" duration="140000" />
-      <workItem from="1543228653730" duration="501000" />
+      <workItem from="1543228653730" duration="970000" />
+      <workItem from="1543409993714" duration="241000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit of all code wars challenges I have completed so far.">
       <created>1542877251914</created>
@@ -559,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543229042001</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Completed challenge &quot;Write a Java program to iterate through all elements in a linked list&quot;.">
+      <created>1543229230900</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1543229230900</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -595,13 +595,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91594000" />
+    <option name="totallyTimeSpent" value="92304000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2360515" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23891273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -662,13 +662,11 @@
     <MESSAGE value="Completed challenge &quot;Write a Java program to trim the capacity of an array list the current list size.&quot;" />
     <MESSAGE value="Completed challenge &quot;Write a Java program to increase the size of an array list." />
     <MESSAGE value="Completed challenge &quot;Write a Java program to append the specified element to the end of a linked list.&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed challenge &quot;Write a Java program to append the specified element to the end of a linked list.&quot;" />
+    <MESSAGE value="Completed challenge &quot;Write a Java program to iterate through all elements in a linked list&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed challenge &quot;Write a Java program to iterate through all elements in a linked list&quot;." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/challenges/tripletrouble/TripleDoubleProcessor.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/challenges/tripletrouble/TripleTroubleTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -998,6 +996,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughListStartingAtSpecific.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
