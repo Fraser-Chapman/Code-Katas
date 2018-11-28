@@ -4,10 +4,9 @@ import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 import uk.co.autotrader.randomchallenges.stringexpression.StringExpression;
-import uk.co.autotrader.randomchallenges.stringexpression.exceptions.InvalidOperatorException;
 
 public class StringExpressionTest {
-    StringExpression stringExpression;
+    private StringExpression stringExpression;
 
     @Before
     public void setUp() {
@@ -56,7 +55,7 @@ public class StringExpressionTest {
 
         String result = stringExpression.stringExpression(input);
 
-        Assertions.assertThat(result).isEqualTo("negativeone");
+        Assertions.assertThat(result).isEqualTo("minusone");
     }
 
     @Test
@@ -76,11 +75,21 @@ public class StringExpressionTest {
 
         Assertions.assertThat(result).isEqualTo("three");
     }
-//
-//    @Test (expected = InvalidOperatorException.class)
-//    public void shouldThrowInvalidOperatorException() {
-//        String input = "onemodulustwo";
+
+    @Test
+    public void shouldMultiplyThreeNumbers() {
+        String input = "twotimesfourtimesfive";
+
+        String result = stringExpression.stringExpression(input);
+
+        Assertions.assertThat(result).isEqualTo("fourzero");
+    }
+//    @Test
+//    public void shouldCalculateExpressionUsingPrecedence(){
+//        String input = "twoplustwoonedividedbyseven";
 //
 //        String result = stringExpression.stringExpression(input);
+//
+//        Assertions.assertThat(result).isEqualTo("five");
 //    }
 }

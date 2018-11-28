@@ -1,7 +1,5 @@
 package uk.co.autotrader.randomchallenges.stringexpression;
 
-import uk.co.autotrader.randomchallenges.stringexpression.exceptions.InvalidOperatorException;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,39 +24,30 @@ public class StringExpression {
                 .replace(Expression.EIGHT.getKey(), Expression.EIGHT.getValue())
                 .replace(Expression.NINE.getKey(), Expression.NINE.getValue());
 
-        int numberOfValues = amountOfValuesInConvertedInput(convertedInput);
-        int resultAsInt;
-        int number1 = 0;
-        int number2 = 0;
+        int number1 = StringExpression.constructNumber(convertedInput);
 
-        for (int i = 0; i < numberOfValues; i++) {
-            number1 = StringExpression.constructNumber(convertedInput);
-            number2 = StringExpression.constructNumber(convertedInput);
+        while(!convertedInput.isEmpty()) {
 
-
-        }
-            switch (operator) {
+            switch (operator){
                 case '+':
-                    resultAsInt = number1 + number2;
+                    number1 += StringExpression.constructNumber(convertedInput);
                     break;
-
                 case '-':
-                    resultAsInt = number1 - number2;
+                    number1 -= StringExpression.constructNumber(convertedInput);
                     break;
-
                 case '*':
-                    resultAsInt = number1 * number2;
+                    number1 *= StringExpression.constructNumber(convertedInput);
                     break;
-
                 case '/':
-                    resultAsInt = number1 / number2;
+                    number1 /= StringExpression.constructNumber(convertedInput);
                     break;
-
                 default:
-                    throw new InvalidOperatorException("Invalid operator was used");
+                    System.out.println("Invalid operator used, failure in switch statement!");
+                    break;
             }
+        }
 
-        return StringExpression.convertResultToString(resultAsInt);
+        return StringExpression.convertResultToString(number1);
     }
 
     private static Integer constructNumber(String expression) {
@@ -84,7 +73,6 @@ public class StringExpression {
             }
 
         }
-
         return Integer.parseInt(number);
     }
 
@@ -116,19 +104,19 @@ public class StringExpression {
         return false;
     }
 
-    private Integer amountOfValuesInConvertedInput(String convertedInput){
-        int numberOfOperators = 0;
-
-        for (int i = 0; i < convertedInput.length(); i++){
-            if(convertedInput.substring(i, i + 1) == "+" ||
-                    convertedInput.substring(i, i + 1) == "-" ||
-                    convertedInput.substring(i, i + 1) == "*" ||
-                    convertedInput.substring(i, i + 1) == "/") {
-
-                //number of operators is always one less than the number of values
-                numberOfOperators += 1;
-            }
-        }
-        return numberOfOperators + 1;
-    }
+//    private Integer amountOfValuesInConvertedInput(String convertedInput){
+//        int numberOfOperators = 0;
+//
+//        for (int i = 0; i < convertedInput.length(); i++){
+//            if(convertedInput.substring(i, i + 1) == "+" ||
+//                    convertedInput.substring(i, i + 1) == "-" ||
+//                    convertedInput.substring(i, i + 1) == "*" ||
+//                    convertedInput.substring(i, i + 1) == "/") {
+//
+//                //number of operators is always one less than the number of values
+//                numberOfOperators += 1;
+//            }
+//        }
+//        return numberOfOperators + 1;
+//    }
 }

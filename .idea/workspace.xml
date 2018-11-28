@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebdd8f42-6ae6-4683-a9fb-5413e6aebe43" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughListStartingAtSpecific.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/Expression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateInReverseOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java" afterDir="false" />
@@ -55,13 +54,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughListStartingAtSpecific.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+            <state relative-caret-position="-1391">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#416#417#0" expanded="true" />
+                <element signature="e#473#474#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,12 +152,13 @@
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/MessAbout.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/exceptions/InvalidOperatorException.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpressionObject.java" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/Expression.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/AppendItemToEndOfList.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughAllElements.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughListStartingAtSpecific.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateInReverseOrder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java" />
       </list>
     </option>
   </component>
@@ -164,64 +178,64 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Code Wars" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code Wars" type="462c0819:PsiDirectoryNode" />
+              <item name="Code Wars" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="Code Wars" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code Wars" type="462c0819:PsiDirectoryNode" />
+              <item name="Code Wars" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Code Wars" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code Wars" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Code Wars" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code Wars" type="462c0819:PsiDirectoryNode" />
+              <item name="Code Wars" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Code Wars" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code Wars" type="462c0819:PsiDirectoryNode" />
+              <item name="Code Wars" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="autotrader" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Code Wars" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code Wars" type="462c0819:PsiDirectoryNode" />
+              <item name="Code Wars" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="autotrader" type="462c0819:PsiDirectoryNode" />
-              <item name="randomchallenges" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Code Wars" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code Wars" type="462c0819:PsiDirectoryNode" />
+              <item name="Code Wars" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="autotrader" type="462c0819:PsiDirectoryNode" />
               <item name="randomchallenges" type="462c0819:PsiDirectoryNode" />
-              <item name="linkedlists" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Code Wars" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Code Wars" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autotrader" type="462c0819:PsiDirectoryNode" />
+              <item name="randomchallenges" type="462c0819:PsiDirectoryNode" />
+              <item name="stringexpression" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -235,7 +249,7 @@
     <property name="LombokPluginIS_VAL_Enabled" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543410327980" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543413981506" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -270,9 +284,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.IterateThroughListStartingAtSpecific">
+  <component name="RunManager" selected="JUnit.StringExpressionTest">
     <configuration name="AppendItemToEndOfList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.linkedlists.AppendItemToEndOfList" />
+      <module name="Code_Wars_main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.linkedlists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IterateInReverseOrder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.linkedlists.IterateInReverseOrder" />
       <module name="Code_Wars_main" />
       <extension name="coverage">
         <pattern>
@@ -324,36 +351,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringExpressionTest.shouldTakeTwoSingleDigitNumbersAndMultiplyThem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Code_Wars_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.StringExpressionTest" />
-      <option name="METHOD_NAME" value="shouldTakeTwoSingleDigitNumbersAndMultiplyThem" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.AppendItemToEndOfList" />
       <item itemvalue="Application.IterateThroughAllElements" />
-      <item itemvalue="JUnit.StringExpressionTest" />
-      <item itemvalue="JUnit.StringExpressionTest.shouldTakeTwoSingleDigitNumbersAndMultiplyThem" />
       <item itemvalue="Application.IterateThroughListStartingAtSpecific" />
+      <item itemvalue="Application.IterateInReverseOrder" />
+      <item itemvalue="JUnit.StringExpressionTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StringExpressionTest" />
+        <item itemvalue="Application.IterateInReverseOrder" />
         <item itemvalue="Application.IterateThroughListStartingAtSpecific" />
         <item itemvalue="Application.IterateThroughAllElements" />
         <item itemvalue="Application.AppendItemToEndOfList" />
-        <item itemvalue="JUnit.StringExpressionTest" />
-        <item itemvalue="JUnit.StringExpressionTest.shouldTakeTwoSingleDigitNumbersAndMultiplyThem" />
       </list>
     </recent_temporary>
   </component>
@@ -396,7 +407,8 @@
       <workItem from="1542981825279" duration="698000" />
       <workItem from="1542988036713" duration="140000" />
       <workItem from="1543228653730" duration="970000" />
-      <workItem from="1543409993714" duration="241000" />
+      <workItem from="1543409993714" duration="718000" />
+      <workItem from="1543412399013" duration="1644000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit of all code wars challenges I have completed so far.">
       <created>1542877251914</created>
@@ -559,49 +571,56 @@
       <option name="project" value="LOCAL" />
       <updated>1543229230900</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Completed challenge &quot;Write a Java program to iterate through elements in a linked list starting at a specific index&quot;.">
+      <created>1543410409210</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1543410409210</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="StringExpressionTest - 2018.11.23 at 11h 16m 37s.xml">
+    <history-entry file="StringExpressionTest - 2018.11.28 at 13h 57m 30s.xml">
       <configuration name="StringExpressionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringExpressionTest - 2018.11.23 at 11h 16m 44s.xml">
+    <history-entry file="StringExpressionTest - 2018.11.28 at 14h 00m 12s.xml">
       <configuration name="StringExpressionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringExpressionTest - 2018.11.23 at 11h 17m 59s.xml">
+    <history-entry file="StringExpressionTest - 2018.11.28 at 14h 01m 51s.xml">
       <configuration name="StringExpressionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringExpressionTest - 2018.11.23 at 11h 19m 16s.xml">
+    <history-entry file="StringExpressionTest - 2018.11.28 at 14h 02m 17s.xml">
       <configuration name="StringExpressionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringExpressionTest - 2018.11.23 at 11h 20m 08s.xml">
+    <history-entry file="StringExpressionTest - 2018.11.28 at 14h 03m 24s.xml">
       <configuration name="StringExpressionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringExpressionTest - 2018.11.23 at 11h 27m 35s.xml">
+    <history-entry file="StringExpressionTest - 2018.11.28 at 14h 03m 54s.xml">
       <configuration name="StringExpressionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringExpressionTest - 2018.11.23 at 11h 28m 03s.xml">
+    <history-entry file="StringExpressionTest - 2018.11.28 at 14h 04m 04s.xml">
       <configuration name="StringExpressionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringExpressionTest - 2018.11.23 at 11h 28m 16s.xml">
+    <history-entry file="StringExpressionTest - 2018.11.28 at 14h 04m 19s.xml">
       <configuration name="StringExpressionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringExpressionTest - 2018.11.23 at 13h 58m 21s.xml">
+    <history-entry file="StringExpressionTest - 2018.11.28 at 14h 05m 00s.xml">
       <configuration name="StringExpressionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StringExpressionTest - 2018.11.26 at 10h 38m 10s.xml">
+    <history-entry file="StringExpressionTest - 2018.11.28 at 14h 05m 18s.xml">
       <configuration name="StringExpressionTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92304000" />
+    <option name="totallyTimeSpent" value="94425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23891273" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24248926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -663,11 +682,11 @@
     <MESSAGE value="Completed challenge &quot;Write a Java program to increase the size of an array list." />
     <MESSAGE value="Completed challenge &quot;Write a Java program to append the specified element to the end of a linked list.&quot;" />
     <MESSAGE value="Completed challenge &quot;Write a Java program to iterate through all elements in a linked list&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed challenge &quot;Write a Java program to iterate through all elements in a linked list&quot;." />
+    <MESSAGE value="Completed challenge &quot;Write a Java program to iterate through elements in a linked list starting at a specific index&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed challenge &quot;Write a Java program to iterate through elements in a linked list starting at a specific index&quot;." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/challenges/tripletrouble/TripleDoubleProcessor.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/challenges/tripletrouble/TripleTroubleTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -924,13 +943,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/MessAbout.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/exceptions/InvalidOperatorException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -950,16 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1172">
-          <caret line="82" column="23" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/Expression.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -969,18 +971,6 @@
             <element signature="e#642#643#0" expanded="true" />
             <element signature="e#812#813#0" expanded="true" />
             <element signature="e#839#840#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="753">
-          <caret line="58" column="54" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1001,10 +991,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughListStartingAtSpecific.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+        <state relative-caret-position="240">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateInReverseOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1391">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
           </folding>
         </state>
       </provider>
