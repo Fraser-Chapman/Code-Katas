@@ -26,9 +26,9 @@ public class StringExpression {
 
         int number1 = StringExpression.constructNumber(convertedInput);
 
-        while(!convertedInput.isEmpty()) {
+        while (!convertedInput.isEmpty()) {
 
-            switch (operator){
+            switch (operator) {
                 case '+':
                     number1 += StringExpression.constructNumber(convertedInput);
                     break;
@@ -58,17 +58,14 @@ public class StringExpression {
                 number += expression.substring(i);
                 convertedInput = "";
                 break;
-            }
-            else if (isOperator(convertedInput.charAt(i + 1))) {
+            } else if (isOperator(convertedInput.charAt(i + 1))) {
                 number += convertedInput.substring(i, i + 1);
                 operator = convertedInput.charAt(i + 1);
                 convertedInput = convertedInput.substring(i + 1);
                 break;
-            }
-            else if (isOperator(convertedInput.charAt(i))) {
+            } else if (isOperator(convertedInput.charAt(i))) {
 
-            }
-            else if (!isOperator(convertedInput.charAt(i + 1))) {
+            } else if (!isOperator(convertedInput.charAt(i + 1))) {
                 number += convertedInput.substring(i, i + 1);
             }
 
@@ -103,20 +100,4 @@ public class StringExpression {
 
         return false;
     }
-
-//    private Integer amountOfValuesInConvertedInput(String convertedInput){
-//        int numberOfOperators = 0;
-//
-//        for (int i = 0; i < convertedInput.length(); i++){
-//            if(convertedInput.substring(i, i + 1) == "+" ||
-//                    convertedInput.substring(i, i + 1) == "-" ||
-//                    convertedInput.substring(i, i + 1) == "*" ||
-//                    convertedInput.substring(i, i + 1) == "/") {
-//
-//                //number of operators is always one less than the number of values
-//                numberOfOperators += 1;
-//            }
-//        }
-//        return numberOfOperators + 1;
-//    }
 }
