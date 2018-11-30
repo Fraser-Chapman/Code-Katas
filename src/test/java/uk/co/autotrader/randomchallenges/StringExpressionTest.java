@@ -93,12 +93,13 @@ public class StringExpressionTest {
 
         Assertions.assertThat(result).isEqualTo("threesixzero");
     }
-//    @Test
-//    public void shouldCalculateExpressionUsingPrecedence(){
-//        String input = "twoplustwoonedividedbyseven";
-//
-//        String result = stringExpression.stringExpression(input);
-//
-//        Assertions.assertThat(result).isEqualTo("five");
-//    }
+
+    @Test
+    public void shouldCalculateExpressionUsingPrecedence() {
+        String input = "twoplustwoonedividedbyseven";
+
+        String result = stringExpression.stringExpression(input);
+
+        Assertions.assertThat(result).isEqualTo("five");
+    }
 }
