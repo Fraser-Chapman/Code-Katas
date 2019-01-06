@@ -310,7 +310,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546619099906" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546787541424" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -345,8 +345,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OddNumberRemoverTest">
-    <configuration name="NaughtsAndCrossesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.NaughtsAndCrossesTest.shouldDetectWinnerWhenTopRowContainsSameChars">
+    <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Code_Wars_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.binarychop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges.binarychop" />
+      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.binarychop.BinaryChopTest" />
+      <option name="METHOD_NAME" value="inputOfSize1AndContainsDesiredNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NaughtsAndCrossesTest.shouldDetectWinnerWhenTopRowContainsSameChars" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Code_Wars_test" />
       <extension name="coverage">
         <pattern>
@@ -356,6 +372,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges.naughtsandcrosses" />
       <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.naughtsandcrosses.NaughtsAndCrossesTest" />
+      <option name="METHOD_NAME" value="shouldDetectWinnerWhenTopRowContainsSameChars" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -406,34 +424,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SortedYesNoHowTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Code_Wars_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.co.autotrader.challenges.sortedyesnohow.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uk.co.autotrader.challenges.sortedyesnohow" />
-      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.challenges.sortedyesnohow.SortedYesNoHowTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.SortedYesNoHowTest" />
-      <item itemvalue="JUnit.NaughtsAndCrossesTest" />
       <item itemvalue="JUnit.OddNumberRemoverTest.removesOddNumbers" />
       <item itemvalue="JUnit.OddNumberRemoverTest.testOtherSomeLibraryMethod" />
       <item itemvalue="JUnit.OddNumberRemoverTest" />
+      <item itemvalue="JUnit.BinaryChopTest.inputOfSize1AndContainsDesiredNumber" />
+      <item itemvalue="JUnit.NaughtsAndCrossesTest.shouldDetectWinnerWhenTopRowContainsSameChars" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.NaughtsAndCrossesTest.shouldDetectWinnerWhenTopRowContainsSameChars" />
+        <item itemvalue="JUnit.BinaryChopTest.inputOfSize1AndContainsDesiredNumber" />
         <item itemvalue="JUnit.OddNumberRemoverTest" />
         <item itemvalue="JUnit.OddNumberRemoverTest.testOtherSomeLibraryMethod" />
         <item itemvalue="JUnit.OddNumberRemoverTest.removesOddNumbers" />
-        <item itemvalue="JUnit.NaughtsAndCrossesTest" />
-        <item itemvalue="JUnit.SortedYesNoHowTest" />
       </list>
     </recent_temporary>
   </component>
