@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebdd8f42-6ae6-4683-a9fb-5413e6aebe43" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -60,8 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            <state relative-caret-position="210">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -69,11 +68,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+            <state relative-caret-position="255">
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
-                <element signature="e#554#555#0" expanded="true" />
-                <element signature="e#581#582#0" expanded="true" />
+                <element signature="e#550#551#0" expanded="true" />
+                <element signature="e#610#611#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -253,7 +252,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546786975813" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546787332270" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -288,7 +287,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BinaryChopTest.inputOfSize1AndContainsDesiredNumber">
+  <component name="RunManager" selected="JUnit.BinaryChopTest.inputOfSize1DoesNotContainNumber">
     <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Code_Wars_test" />
       <extension name="coverage">
@@ -376,8 +375,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BinaryChopTest.inputOfSize1AndContainsDesiredNumber" />
         <item itemvalue="JUnit.BinaryChopTest.inputOfSize1DoesNotContainNumber" />
+        <item itemvalue="JUnit.BinaryChopTest.inputOfSize1AndContainsDesiredNumber" />
         <item itemvalue="JUnit.OddNumberRemoverTest" />
         <item itemvalue="JUnit.OddNumberRemoverTest.testOtherSomeLibraryMethod" />
         <item itemvalue="JUnit.OddNumberRemoverTest.removesOddNumbers" />
@@ -433,7 +432,7 @@
       <workItem from="1545655779423" duration="111000" />
       <workItem from="1546615892899" duration="3155000" />
       <workItem from="1546633644261" duration="413000" />
-      <workItem from="1546785220675" duration="1720000" />
+      <workItem from="1546785220675" duration="2089000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit of all code wars challenges I have completed so far.">
       <created>1542877251914</created>
@@ -614,18 +613,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OddNumberRemoverTest_testSomeLibraryMethod - 2019.01.04 at 15h 59m 28s.xml">
-      <configuration name="OddNumberRemoverTest.testSomeLibraryMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OddNumberRemoverTest_testOtherSomeLibraryMethod - 2019.01.04 at 16h 02m 47s.xml">
-      <configuration name="OddNumberRemoverTest.testOtherSomeLibraryMethod" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OddNumberRemoverTest - 2019.01.04 at 16h 19m 27s.xml">
-      <configuration name="OddNumberRemoverTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 14h 36m 56s.xml">
-      <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 14h 43m 32s.xml">
       <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" configurationId="JUnit" />
     </history-entry>
@@ -644,9 +631,21 @@
     <history-entry file="BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 15h 02m 14s.xml">
       <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 15h 02m 44s.xml">
+      <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 15h 02m 58s.xml">
+      <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 15h 03m 30s.xml">
+      <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BinaryChopTest_inputOfSize1DoesNotContainNumber - 2019.01.06 at 15h 06m 34s.xml">
+      <configuration name="BinaryChopTest.inputOfSize1DoesNotContainNumber" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109994000" />
+    <option name="totallyTimeSpent" value="110363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -667,7 +666,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.29156625" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.29036143" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007153" side_tool="true" weight="0.27951807" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32650602" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
@@ -1088,19 +1087,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+        <state relative-caret-position="255">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        <state relative-caret-position="210">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
