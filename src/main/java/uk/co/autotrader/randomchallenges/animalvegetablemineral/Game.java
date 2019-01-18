@@ -16,7 +16,7 @@ public class Game {
     private Scanner scanner = new Scanner(System.in);
     private final Choice choice;
 
-    private static boolean hasGuessed = false;
+    private boolean hasGuessed = false;
     private final String[][] questionsArray;
 
 
@@ -67,7 +67,7 @@ public class Game {
     public static void main(String[] args) {
         Game game = new Game();
 
-        while (!hasGuessed) {
+        while (!game.hasGuessed) {
             game.printQuestions();
             System.out.println(game.askQuestion(game.getUserQuestion()));
             game.promptUserForGuess();
