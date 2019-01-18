@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebdd8f42-6ae6-4683-a9fb-5413e6aebe43" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/AnimalVegetableMineral.java" afterDir="false" />
+    <list default="true" id="ebdd8f42-6ae6-4683-a9fb-5413e6aebe43" name="Default Changelist" comment="Added functionality to read user input">
       <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Feline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/HouseCat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Lion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/mineral/Mineral.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/vegetable/Vegetable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/META-INF/Code_Wars_main.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/META-INF/Code_Wars_main.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/AnimalVegetableMineral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/AnimalVegetableMineral.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/rockpaperscissors/RockPaperScissorsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/rockpaperscissors/RockPaperScissorsTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -62,11 +64,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/AnimalVegetableMineral.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+            <state relative-caret-position="397">
+              <caret line="48" column="39" lean-forward="true" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,11 +85,65 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Cat.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Feline.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="330">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding>
+                <element signature="e#160#161#0" expanded="true" />
+                <element signature="e#184#185#0" expanded="true" />
+                <element signature="e#230#231#0" expanded="true" />
+                <element signature="e#258#259#0" expanded="true" />
+                <element signature="e#303#304#0" expanded="true" />
+                <element signature="e#331#332#0" expanded="true" />
+                <element signature="e#381#382#0" expanded="true" />
+                <element signature="e#409#410#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/HouseCat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="e#171#172#0" expanded="true" />
+                <element signature="e#199#200#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Lion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#167#168#0" expanded="true" />
+                <element signature="e#195#196#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/mineral/Mineral.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/vegetable/Vegetable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -134,11 +190,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/StringExpression.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/PrintArrayListContents.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/IterateThroughArrayList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/AddElementToStartOfList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/RetrieveElementFromArrayList.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ChangeValueAtGivenIndex.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/RemoveThirdElement.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/SearchForAnElement.java" />
@@ -181,10 +232,15 @@
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/rockpaperscissors/inputs/Rock.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/rockpaperscissors/RockPaperScissors.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/AnimalVegetableMineral.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/rockpaperscissors/RockPaperScissorsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Animal.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Cat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Feline.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/HouseCat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Lion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/mineral/Mineral.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/vegetable/Vegetable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/AnimalVegetableMineral.java" />
       </list>
     </option>
   </component>
@@ -195,8 +251,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -271,18 +328,6 @@
               <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
               <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="autotrader" type="462c0819:PsiDirectoryNode" />
-              <item name="randomchallenges" type="462c0819:PsiDirectoryNode" />
-              <item name="animalvegetablemineral" type="462c0819:PsiDirectoryNode" />
-              <item name="choices" type="462c0819:PsiDirectoryNode" />
-              <item name="animal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -342,7 +387,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547806254142" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547808332223" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -700,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543414277827</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added placeholder questions which are stored in a questions list which is created by the buildQuestions method. Added a printQuestions method to display the questions to the user.">
+      <created>1547806383638</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1547806383638</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -736,12 +788,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111899000" />
+    <option name="totallyTimeSpent" value="114355000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31688127" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31688127" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -750,7 +803,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.34096387" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.34096387" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -813,7 +866,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit of all code wars challenges I have completed so far." />
     <MESSAGE value="Completed challenge &quot;Write a Java program to create a new array list, add some colors (string) and print out the collection&quot;" />
     <MESSAGE value="Completed challenge &quot;Write a Java program to iterate through all elements in a array list.&quot;" />
     <MESSAGE value="Completed challenge &quot;add en element to the start of an array list&quot;" />
@@ -838,7 +890,8 @@
     <MESSAGE value="Completed challenge &quot;Write a Java program to iterate through all elements in a linked list&quot;." />
     <MESSAGE value="Completed challenge &quot;Write a Java program to iterate through elements in a linked list starting at a specific index&quot;." />
     <MESSAGE value="String Expression challenge can now take more than two values and perform any of the mathematical operations on them and return the result in the same format as they were given." />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Added placeholder questions which are stored in a questions list which is created by the buildQuestions method. Added a printQuestions method to display the questions to the user." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added placeholder questions which are stored in a questions list which is created by the buildQuestions method. Added a printQuestions method to display the questions to the user." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="debuggerHistoryManager">
@@ -851,34 +904,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/IterateThroughArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ShuffleList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ReverseList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ExtractPortionOfArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CompareTwoLists.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -1182,12 +1207,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/AnimalVegetableMineral.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Feline.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+        <state relative-caret-position="330">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#160#161#0" expanded="true" />
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#381#382#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/HouseCat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#171#172#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/vegetable/Vegetable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/mineral/Mineral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Lion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#167#168#0" expanded="true" />
+            <element signature="e#195#196#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1199,10 +1267,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Cat.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/AnimalVegetableMineral.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="397">
+          <caret line="48" column="39" lean-forward="true" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
