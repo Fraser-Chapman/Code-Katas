@@ -4,12 +4,13 @@ import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.Choice;
 import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal.HoneyBadger;
 import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal.HouseCat;
 import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal.Lion;
+import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.mineral.Coal;
+import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.vegetable.Broccoli;
 
 import java.util.*;
 
-
 public class AnimalVegetableMineral {
-    private static final String QUESTION_1 = "question 1";
+    private static final String QUESTION_1 = "Animal, Vegetable or Mineral?";
     private static final String QUESTION_2 = "question 2";
     private static final String QUESTION_3 = "question 3";
     private static final String QUESTION_4 = "question 4";
@@ -51,6 +52,8 @@ public class AnimalVegetableMineral {
         choiceList.add(new HouseCat());
         choiceList.add(new Lion());
         choiceList.add(new HoneyBadger());
+        choiceList.add(new Broccoli());
+        choiceList.add(new Coal());
 
         Collections.shuffle(choiceList);
         return choiceList.get(0);
