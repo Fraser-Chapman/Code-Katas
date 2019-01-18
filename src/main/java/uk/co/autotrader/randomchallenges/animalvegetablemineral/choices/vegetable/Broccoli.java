@@ -5,4 +5,9 @@ public class Broccoli extends Vegetable {
     public boolean isRootVegetable() {
         return false;
     }
+
+    @Override
+    public String getName() {
+        return "broccoli";
+    }
 }

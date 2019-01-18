@@ -5,4 +5,9 @@ public class Lion extends Feline {
     public boolean isDomesticated() {
         return false;
     }
+
+    @Override
+    public String getName() {
+        return "lion";
+    }
 }

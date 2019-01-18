@@ -10,4 +10,9 @@ public class Coal extends Mineral {
     public boolean isShiny() {
         return false;
     }
+
+    @Override
+    public String getName() {
+        return "coal";
+    }
 }

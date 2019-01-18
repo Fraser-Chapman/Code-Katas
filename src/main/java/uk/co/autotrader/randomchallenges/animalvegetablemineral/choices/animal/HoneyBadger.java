@@ -25,4 +25,9 @@ public class HoneyBadger extends Animal {
     public boolean isDomesticated() {
         return false;
     }
+
+    @Override
+    public String getName() {
+        return "honey badger";
+    }
 }

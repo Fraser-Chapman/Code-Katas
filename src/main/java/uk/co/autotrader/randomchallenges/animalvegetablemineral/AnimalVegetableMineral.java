@@ -1,8 +1,8 @@
 package uk.co.autotrader.randomchallenges.animalvegetablemineral;
 
 import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.Choice;
+import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal.Cat;
 import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal.HoneyBadger;
-import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal.HouseCat;
 import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal.Lion;
 import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.mineral.Coal;
 import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.vegetable.Broccoli;
@@ -17,8 +17,11 @@ public class AnimalVegetableMineral {
     private static final String QUESTION_5 = "question 5";
     private static final String QUESTION_6 = "question 6";
 
-    public static LinkedHashMap<Integer, String> questions;
-    public static Choice choice;
+    private static LinkedHashMap<Integer, String> questions;
+    private static Choice choice;
+    private static Scanner scanner = new Scanner(System.in);
+
+    public static boolean hasGuessed = false;
 
     private static LinkedHashMap<Integer, String> buildInitialQuestions() {
         LinkedHashMap questions = new LinkedHashMap();
@@ -39,8 +42,8 @@ public class AnimalVegetableMineral {
         }
     }
 
+    //TODO look at extracting more into this method as it doesn't really do what it says it goes.
     private static Integer getUserQuestion() {
-        Scanner scanner = new Scanner(System.in);
         return Integer.parseInt(scanner.nextLine());
     }
 
@@ -56,7 +59,7 @@ public class AnimalVegetableMineral {
 
     private static Choice selectRandomChoice() {
         List<Choice> choiceList = new ArrayList<>();
-        choiceList.add(new HouseCat());
+        choiceList.add(new Cat());
         choiceList.add(new Lion());
         choiceList.add(new HoneyBadger());
         choiceList.add(new Broccoli());
@@ -66,10 +69,34 @@ public class AnimalVegetableMineral {
         return choiceList.get(0);
     }
 
+    private static void promptUserForGuess() {
+        System.out.println("Would you like to guess what I'm thinking of? (y/n)");
+        String input = scanner.nextLine().toLowerCase();
+
+        if (input.equals("y")) {
+            hasGuessed = true;
+            guessChoice();
+        }
+    }
+
+    private static void guessChoice() {
+        System.out.println("Please enter your guess: ");
+        String guess = scanner.nextLine().toLowerCase();
+        if (guess.equals(choice.getName())){
+            System.out.println("Congratulations! You guessed right!");
+        }
+        else {
+            System.out.println("Wrong! The correct answer is: " + choice.getName());
+        }
+    }
+
     public static void main(String[] args) {
         choice = selectRandomChoice();
         questions = buildInitialQuestions();
-        printQuestions(questions);
-        System.out.println(askQuestion(getUserQuestion()));
+        while (!hasGuessed) {
+            printQuestions(questions);
+            System.out.println(askQuestion(getUserQuestion()));
+            promptUserForGuess();
+        }
     }
 }
