@@ -1,11 +1,14 @@
 package uk.co.autotrader.randomchallenges.animalvegetablemineral;
 
-import java.util.LinkedHashMap;
-import java.util.Scanner;
+import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.Choice;
+import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal.HoneyBadger;
+import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal.HouseCat;
+import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal.Lion;
+
+import java.util.*;
 
 
 public class AnimalVegetableMineral {
-
     private static final String QUESTION_1 = "question 1";
     private static final String QUESTION_2 = "question 2";
     private static final String QUESTION_3 = "question 3";
@@ -43,7 +46,18 @@ public class AnimalVegetableMineral {
         throw new RuntimeException("Feature not yet implemented");
     }
 
+    private static Choice selectRandomChoice() {
+        List<Choice> choiceList = new ArrayList<>();
+        choiceList.add(new HouseCat());
+        choiceList.add(new Lion());
+        choiceList.add(new HoneyBadger());
+
+        Collections.shuffle(choiceList);
+        return choiceList.get(0);
+    }
+
     public static void main(String[] args) {
+        Choice choice = selectRandomChoice();
         questions = buildInitialQuestions();
         printQuestions(questions);
         askQuestion(getUserQuestion());
