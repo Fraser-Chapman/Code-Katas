@@ -8,4 +8,8 @@ public abstract class Animal extends Choice {
     public abstract boolean hasFur();
     public abstract boolean isCarnivore();
     public abstract boolean isDomesticated();
+
+    public String getType() {
+        return "Animal";
+    }
 }

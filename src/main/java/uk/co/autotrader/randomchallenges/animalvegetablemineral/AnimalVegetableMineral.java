@@ -18,6 +18,7 @@ public class AnimalVegetableMineral {
     private static final String QUESTION_6 = "question 6";
 
     public static LinkedHashMap<Integer, String> questions;
+    public static Choice choice;
 
     private static LinkedHashMap<Integer, String> buildInitialQuestions() {
         LinkedHashMap questions = new LinkedHashMap();
@@ -43,7 +44,13 @@ public class AnimalVegetableMineral {
         return Integer.parseInt(scanner.nextLine());
     }
 
-    private static Boolean askQuestion(int questionNumber){
+    private static String askQuestion(int questionNumber){
+        switch (questionNumber) {
+            case (1):
+                questions.remove(1);
+                return choice.getType();
+
+        }
         throw new RuntimeException("Feature not yet implemented");
     }
 
@@ -60,9 +67,9 @@ public class AnimalVegetableMineral {
     }
 
     public static void main(String[] args) {
-        Choice choice = selectRandomChoice();
+        choice = selectRandomChoice();
         questions = buildInitialQuestions();
         printQuestions(questions);
-        askQuestion(getUserQuestion());
+        System.out.println(askQuestion(getUserQuestion()));
     }
 }
