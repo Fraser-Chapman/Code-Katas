@@ -1,14 +1,15 @@
 package uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal;
 
-import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.Choice;
+import uk.co.autotrader.randomchallenges.animalvegetablemineral.Choice;
 
-public abstract class Animal extends Choice {
-    public abstract int howManyLegs();
-    public abstract boolean hasTail();
-    public abstract boolean hasFur();
-    public abstract boolean isCarnivore();
-    public abstract boolean isDomesticated();
+public abstract class Animal implements Choice {
 
+    @Override
+    public int getNumberOfLegs() {
+        return 2;
+    }
+
+    @Override
     public String getType() {
         return "Animal";
     }

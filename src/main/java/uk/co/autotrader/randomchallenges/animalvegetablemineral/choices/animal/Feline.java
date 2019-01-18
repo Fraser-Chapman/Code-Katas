@@ -3,7 +3,7 @@ package uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal;
 public abstract class Feline extends Animal {
 
     @Override
-    public int howManyLegs() {
+    public int getNumberOfLegs() {
         return 4;
     }
 
@@ -13,13 +13,11 @@ public abstract class Feline extends Animal {
     }
 
     @Override
-    public boolean hasFur() {
-        return true;
-    }
-
-    @Override
     public boolean isCarnivore() {
         return true;
     }
 
+    public boolean hasFur() {
+        return true;
+    }
 }

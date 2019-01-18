@@ -1,10 +1,8 @@
 package uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.mineral;
 
-import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.Choice;
+import uk.co.autotrader.randomchallenges.animalvegetablemineral.Choice;
 
-public abstract class Mineral extends Choice {
-    public abstract boolean isRare();
-    public abstract boolean isShiny();
+public abstract class Mineral implements Choice {
 
     public String getType() {
         return "Mineral";
