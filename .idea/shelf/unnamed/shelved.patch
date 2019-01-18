@@ -1,0 +1,558 @@
+Index: src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package uk.co.autotrader.randomchallenges.binarychop;\n\nimport org.junit.Before;\nimport org.junit.Test;\n\nimport static org.junit.Assert.*;\nimport static org.assertj.core.api.Assertions.assertThat;\n\npublic class BinaryChopTest {\n\n    private BinaryChop binaryChop;\n\n    @Before\n    public void setup() {\n        binaryChop = new BinaryChop();\n    }\n\n    @Test\n    public void inputOfSize1AndContainsDesiredNumber() {\n        assertThat(binaryChop.chop(8, new int[]{8})).isEqualTo(0);\n    }\n\n    @Test\n    public void inputOfSize1DoesNotContainNumber() {\n        assertThat(binaryChop.chop(3, new int[]{6})).isEqualTo(-1);\n    }\n\n    @Test\n    public void uberTest() {\n        assertThat(binaryChop.chop(3, new int[]{})).isEqualTo(-1);\n        assertThat(binaryChop.chop(3, new int[]{1})).isEqualTo(-1);\n        assertThat(binaryChop.chop(1, new int[]{1})).isEqualTo(0);\n        assertThat(binaryChop.chop(1, new int[]{1, 3, 5})).isEqualTo(0);\n        assertThat(binaryChop.chop(3, new int[]{1, 3, 5})).isEqualTo(1);\n        assertThat(binaryChop.chop(5, new int[]{1, 3, 5})).isEqualTo(2);\n        assertThat(binaryChop.chop(0, new int[]{1, 3, 5})).isEqualTo(-1);\n        assertThat(binaryChop.chop(2, new int[]{1, 3, 5})).isEqualTo(-1);\n        assertThat(binaryChop.chop(4, new int[]{1, 3, 5})).isEqualTo(-1);\n        assertThat(binaryChop.chop(6, new int[]{1, 3, 5})).isEqualTo(-1);\n        assertThat(binaryChop.chop(1, new int[]{1, 3, 5, 7})).isEqualTo(0);\n        assertThat(binaryChop.chop(3, new int[]{1, 3, 5, 7})).isEqualTo(1);\n        assertThat(binaryChop.chop(5, new int[]{1, 3, 5, 7})).isEqualTo(2);\n        assertThat(binaryChop.chop(7, new int[]{1, 3, 5, 7})).isEqualTo(3);\n        assertThat(binaryChop.chop(0, new int[]{1, 3, 5, 7})).isEqualTo(-1);\n        assertThat(binaryChop.chop(2, new int[]{1, 3, 5, 7})).isEqualTo(-1);\n        assertThat(binaryChop.chop(4, new int[]{1, 3, 5, 7})).isEqualTo(-1);\n        assertThat(binaryChop.chop(6, new int[]{1, 3, 5, 7})).isEqualTo(-1);\n        assertThat(binaryChop.chop(8, new int[]{1, 3, 5, 7})).isEqualTo(-1);\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java	(revision 12863dbd01fe11e7decdc03175414d40e738e802)
++++ src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java	(date 1547740200000)
+@@ -1,9 +1,9 @@
+ package uk.co.autotrader.randomchallenges.binarychop;
+ 
+ import org.junit.Before;
++import org.junit.Ignore;
+ import org.junit.Test;
+ 
+-import static org.junit.Assert.*;
+ import static org.assertj.core.api.Assertions.assertThat;
+ 
+ public class BinaryChopTest {
+@@ -25,6 +25,12 @@
+         assertThat(binaryChop.chop(3, new int[]{6})).isEqualTo(-1);
+     }
+ 
++    @Test
++    public void inputOfSize2AndContainsNumber() {
++        assertThat(binaryChop.chop(3, new int[]{1, 3})).isEqualTo(1);
++    }
++
++    @Ignore
+     @Test
+     public void uberTest() {
+         assertThat(binaryChop.chop(3, new int[]{})).isEqualTo(-1);
+Index: src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package uk.co.autotrader.randomchallenges.binarychop;\n\npublic class BinaryChop {\n    public int chop(int searchingFor, int[] data) {\n        if(data[getMiddleIndex(data)] == searchingFor) {\n            return data.length / 2;\n        }\n        else {\n            return -1;\n        }\n    }\n\n    private int getMiddleIndex(int[] array) {\n        if(array.length == 1){\n            return 0;\n        }\n        else {\n            return (array.length / 2) - 1;\n        }\n\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java	(revision 12863dbd01fe11e7decdc03175414d40e738e802)
++++ src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java	(date 1547740200000)
+@@ -1,22 +1,44 @@
+ package uk.co.autotrader.randomchallenges.binarychop;
+ 
++import java.util.ArrayList;
++import java.util.List;
++
+ public class BinaryChop {
+     public int chop(int searchingFor, int[] data) {
+-        if(data[getMiddleIndex(data)] == searchingFor) {
+-            return data.length / 2;
+-        }
+-        else {
+-            return -1;
++        List<Integer> integerList = convertToList(data);
++
++        while(integerList.get(getMiddleIndex(integerList)) != ) {
++            if (data[getMiddleIndex(data)] > searchingFor) {
++
++            }
+         }
++
++
++//        if(data[getMiddleIndex(data)] == searchingFor) {
++//            return data.length / 2;
++//        }
++//        else if (data[getMiddleIndex(data)] < searchingFor){
++//
++//        }
++//        else {
++//            return -1;
++//        }
+     }
+ 
+-    private int getMiddleIndex(int[] array) {
+-        if(array.length == 1){
++    private List<Integer> convertToList(int[] data) {
++        List<Integer> integerList = new ArrayList<>();
++        for (int number : data) {
++            integerList.add(number);
++        }
++        return integerList;
++    }
++
++    private int getMiddleIndex(List<Integer> list) {
++        if(list.size() == 1){
+             return 0;
+         }
+         else {
+-            return (array.length / 2) - 1;
++            return (list.size() / 2) - 1;
+         }
+-
+     }
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"ebdd8f42-6ae6-4683-a9fb-5413e6aebe43\" name=\"Default Changelist\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/out/test/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/test/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.java\" afterDir=\"false\" />\n    </list>\n    <ignored path=\"$PROJECT_DIR$/out/\" />\n    <ignored path=\"$PROJECT_DIR$/.gradle/\" />\n    <ignored path=\"$PROJECT_DIR$/build/\" />\n    <option name=\"EXCLUDED_CONVERTED_TO_IGNORED\" value=\"true\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"CoverageDataManager\">\n    <SUITE FILE_PATH=\"coverage/Code_Wars$StringExpressionTest_shouldTakeTwoMultipleDigitNumbersAndAddThemTogether.ic\" NAME=\"StringExpressionTest.shouldTakeTwoMultipleDigitNumbersAndAddThemTogether Coverage Results\" MODIFIED=\"1542898581526\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\n      <FILTER>uk.co.autotrader.randomchallenges.*</FILTER>\n    </SUITE>\n    <SUITE FILE_PATH=\"coverage/Code_Wars$TripleTroubleTest.ic\" NAME=\"TripleTroubleTest Coverage Results\" MODIFIED=\"1539786033686\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\n      <FILTER>uk.co.autotrader.challenges.tripletrouble.*</FILTER>\n    </SUITE>\n    <SUITE FILE_PATH=\"coverage/Code_Wars$TripleTrouble.ic\" NAME=\"TripleTrouble Coverage Results\" MODIFIED=\"1539786113120\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"idea\" COVERAGE_BY_TEST_ENABLED=\"false\" COVERAGE_TRACING_ENABLED=\"false\">\n      <FILTER>uk.co.autotrader.challenges.tripletrouble.*</FILTER>\n    </SUITE>\n  </component>\n  <component name=\"CoverageViewManager\">\n    <option name=\"myElementSize\" value=\"220\" />\n  </component>\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"ExternalProjectsManager\">\n    <system id=\"GRADLE\">\n      <state>\n        <projects_view>\n          <tree_state>\n            <expand>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"Code Wars\" type=\"f1a62948:ProjectNode\" />\n              </path>\n            </expand>\n            <select />\n          </tree_state>\n        </projects_view>\n      </state>\n    </system>\n  </component>\n  <component name=\"FileEditorManager\">\n    <leaf>\n      <file pinned=\"false\" current-in-tab=\"true\">\n        <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state relative-caret-position=\"210\">\n              <caret line=\"17\" selection-start-line=\"17\" selection-end-line=\"17\" />\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state relative-caret-position=\"255\">\n              <caret line=\"25\" column=\"5\" lean-forward=\"true\" selection-start-line=\"25\" selection-start-column=\"5\" selection-end-line=\"25\" selection-end-column=\"5\" />\n              <folding>\n                <element signature=\"e#550#551#0\" expanded=\"true\" />\n                <element signature=\"e#610#611#0\" expanded=\"true\" />\n              </folding>\n            </state>\n          </provider>\n        </entry>\n      </file>\n    </leaf>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Enum\" />\n        <option value=\"Class\" />\n        <option value=\"JUnit4 Test Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"PREVIOUS_COMMIT_AUTHORS\">\n      <list>\n        <option value=\"Fraser-Chapman &lt;fraserchapman16@gmail.com&gt;\" />\n        <option value=\"fraser-chapman &lt;fraser.chapman@autotrader.co.uk&gt;\" />\n      </list>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\n      </map>\n    </option>\n    <option name=\"SIGN_OFF_COMMIT\" value=\"true\" />\n  </component>\n  <component name=\"IdeDocumentHistory\">\n    <option name=\"CHANGED_PATHS\">\n      <list>\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/challenges/countofpositivessumofnegatives/CountOfPositivesSumOfNegatives.java\" />\n        <option value=\"$PROJECT_DIR$/src/test/java/uk/co/autotrader/challenges/brokensequence/BrokenSequenceTest.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/challenges/brokensequence/BrokenSequence.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/random.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/StringExpressionObject.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/StringExpression.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/PrintArrayListContents.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/IterateThroughArrayList.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/AddElementToStartOfList.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/RetrieveElementFromArrayList.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ChangeValueAtGivenIndex.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/RemoveThirdElement.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/SearchForAnElement.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/SortList.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CopyArrayList.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ShuffleList.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ReverseList.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ExtractPortionOfArrayList.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CompareTwoLists.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/SwapTwoElements.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/JoinTwoLists.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CloneList.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/EmptyAList.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/TestIfListIsEmpty.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/TrimList.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/IncreaseSize.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ReplaceSecondElement.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/PrintListUsingIndex.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/messabout.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/MessAbout.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/exceptions/InvalidOperatorException.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpressionObject.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/Expression.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/AppendItemToEndOfList.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughAllElements.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughListStartingAtSpecific.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateInReverseOrder.java\" />\n        <option value=\"$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/challenges/test.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/challenges/sortedyesnohow/SortedYesNoHow.java\" />\n        <option value=\"$PROJECT_DIR$/src/test/java/uk/co/autotrader/challenges/sortedyesnohow/SortedYesNoHowTest.java\" />\n        <option value=\"$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.java\" />\n        <option value=\"$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/lambdaskata/LambdasKataTest.java\" />\n        <option value=\"$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/lambdaskata/OddNumberRemoverTest.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/lambdaskata/OddNumberRemover.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/shit.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/Shit.java\" />\n        <option value=\"$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"MavenProjectNavigator\">\n    <treeState>\n      <expand />\n      <select />\n    </treeState>\n  </component>\n  <component name=\"ProjectFrameBounds\" fullScreen=\"true\">\n    <option name=\"width\" value=\"1440\" />\n    <option name=\"height\" value=\"900\" />\n  </component>\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectView\">\n    <navigator proportions=\"\" version=\"1\">\n      <foldersAlwaysOnTop value=\"true\" />\n    </navigator>\n    <panes>\n      <pane id=\"PackagesPane\" />\n      <pane id=\"Scope\" />\n      <pane id=\"ProjectPane\">\n        <subPane>\n          <expand>\n            <path>\n              <item name=\"Code-Katas\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Code-Katas\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Code-Katas\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Code-Katas\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Code-Katas\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Code-Katas\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Code-Katas\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Code-Katas\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode\" />\n              <item name=\"java\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Code-Katas\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Code-Katas\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode\" />\n              <item name=\"java\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"autotrader\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Code-Katas\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Code-Katas\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode\" />\n              <item name=\"java\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"autotrader\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"randomchallenges\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Code-Katas\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Code-Katas\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode\" />\n              <item name=\"java\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"autotrader\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"randomchallenges\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"binarychop\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n          </expand>\n          <select />\n        </subPane>\n      </pane>\n    </panes>\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"Downloaded.Files.Path.Enabled\" value=\"false\" />\n    <property name=\"LombokPluginEnabledInProject\" value=\"true\" />\n    <property name=\"LombokPluginIS_BUILDER_Enabled\" value=\"true\" />\n    <property name=\"LombokPluginIS_CONSTRUCTOR_Enabled\" value=\"true\" />\n    <property name=\"LombokPluginIS_DELEGATE_Enabled\" value=\"true\" />\n    <property name=\"LombokPluginIS_LOG_Enabled\" value=\"true\" />\n    <property name=\"LombokPluginIS_LOMBOK_VERSION_CHECK_Enabled\" value=\"false\" />\n    <property name=\"LombokPluginIS_MISSING_LOMBOK_CHECK_Enabled\" value=\"false\" />\n    <property name=\"LombokPluginIS_VAL_Enabled\" value=\"true\" />\n    <property name=\"Repository.Attach.Annotations\" value=\"false\" />\n    <property name=\"Repository.Attach.JavaDocs\" value=\"false\" />\n    <property name=\"Repository.Attach.Sources\" value=\"false\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\n    <property name=\"com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp\" value=\"1546787332270\" />\n    <property name=\"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary\" value=\"JUnit4\" />\n    <property name=\"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4\" value=\"\" />\n    <property name=\"extract.method.default.visibility\" value=\"private\" />\n    <property name=\"nodejs_interpreter_path.stuck_in_default_project\" value=\"undefined stuck path\" />\n    <property name=\"nodejs_npm_path_reset_for_default_project\" value=\"true\" />\n    <property name=\"project.structure.last.edited\" value=\"Problems\" />\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CreateTestDialog.RecentsKey\">\n      <recent name=\"uk.co.autotrader.randomchallenges.binarychop\" />\n      <recent name=\"uk.co.autotrader.randomchallenges.lambdaskata\" />\n      <recent name=\"uk.co.autotrader.randomchallenges.naughtsandcrosses\" />\n      <recent name=\"uk.co.autotrader.challenges.sortedyesnohow\" />\n      <recent name=\"uk.co.autotrader.randomchallenges\" />\n    </key>\n    <key name=\"CreateTestDialog.Recents.Supers\">\n      <recent name=\"\" />\n    </key>\n  </component>\n  <component name=\"RunDashboard\">\n    <option name=\"ruleStates\">\n      <list>\n        <RuleState>\n          <option name=\"name\" value=\"ConfigurationTypeDashboardGroupingRule\" />\n        </RuleState>\n        <RuleState>\n          <option name=\"name\" value=\"StatusDashboardGroupingRule\" />\n        </RuleState>\n      </list>\n    </option>\n  </component>\n  <component name=\"RunManager\" selected=\"JUnit.BinaryChopTest.inputOfSize1DoesNotContainNumber\">\n    <configuration name=\"BinaryChopTest.inputOfSize1AndContainsDesiredNumber\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Code_Wars_test\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"uk.co.autotrader.randomchallenges.binarychop.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"uk.co.autotrader.randomchallenges.binarychop\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"uk.co.autotrader.randomchallenges.binarychop.BinaryChopTest\" />\n      <option name=\"METHOD_NAME\" value=\"inputOfSize1AndContainsDesiredNumber\" />\n      <option name=\"TEST_OBJECT\" value=\"method\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"BinaryChopTest.inputOfSize1DoesNotContainNumber\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Code_Wars_test\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"uk.co.autotrader.randomchallenges.binarychop.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"uk.co.autotrader.randomchallenges.binarychop\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"uk.co.autotrader.randomchallenges.binarychop.BinaryChopTest\" />\n      <option name=\"METHOD_NAME\" value=\"inputOfSize1DoesNotContainNumber\" />\n      <option name=\"TEST_OBJECT\" value=\"method\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"OddNumberRemoverTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Code_Wars_test\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"uk.co.autotrader.randomchallenges.lambdaskata.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"uk.co.autotrader.randomchallenges.lambdaskata\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"uk.co.autotrader.randomchallenges.lambdaskata.OddNumberRemoverTest\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"OddNumberRemoverTest.removesOddNumbers\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Code_Wars_test\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"uk.co.autotrader.randomchallenges.lambdaskata.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"uk.co.autotrader.randomchallenges.lambdaskata\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"uk.co.autotrader.randomchallenges.lambdaskata.OddNumberRemoverTest\" />\n      <option name=\"METHOD_NAME\" value=\"removesOddNumbers\" />\n      <option name=\"TEST_OBJECT\" value=\"method\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"OddNumberRemoverTest.testOtherSomeLibraryMethod\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Code_Wars_test\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"uk.co.autotrader.randomchallenges.lambdaskata.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <option name=\"PACKAGE_NAME\" value=\"uk.co.autotrader.randomchallenges.lambdaskata\" />\n      <option name=\"MAIN_CLASS_NAME\" value=\"uk.co.autotrader.randomchallenges.lambdaskata.OddNumberRemoverTest\" />\n      <option name=\"METHOD_NAME\" value=\"testOtherSomeLibraryMethod\" />\n      <option name=\"TEST_OBJECT\" value=\"method\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <list>\n      <item itemvalue=\"JUnit.OddNumberRemoverTest.removesOddNumbers\" />\n      <item itemvalue=\"JUnit.OddNumberRemoverTest.testOtherSomeLibraryMethod\" />\n      <item itemvalue=\"JUnit.OddNumberRemoverTest\" />\n      <item itemvalue=\"JUnit.BinaryChopTest.inputOfSize1AndContainsDesiredNumber\" />\n      <item itemvalue=\"JUnit.BinaryChopTest.inputOfSize1DoesNotContainNumber\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"JUnit.BinaryChopTest.inputOfSize1DoesNotContainNumber\" />\n        <item itemvalue=\"JUnit.BinaryChopTest.inputOfSize1AndContainsDesiredNumber\" />\n        <item itemvalue=\"JUnit.OddNumberRemoverTest\" />\n        <item itemvalue=\"JUnit.OddNumberRemoverTest.testOtherSomeLibraryMethod\" />\n        <item itemvalue=\"JUnit.OddNumberRemoverTest.removesOddNumbers\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SvnConfiguration\">\n    <configuration />\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"ebdd8f42-6ae6-4683-a9fb-5413e6aebe43\" name=\"Default Changelist\" comment=\"\" />\n      <created>1539763323645</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1539763323645</updated>\n      <workItem from=\"1539763328018\" duration=\"8301000\" />\n      <workItem from=\"1539772192628\" duration=\"3665000\" />\n      <workItem from=\"1539780215833\" duration=\"5962000\" />\n      <workItem from=\"1539787707396\" duration=\"4000\" />\n      <workItem from=\"1540145583353\" duration=\"17407000\" />\n      <workItem from=\"1540289164267\" duration=\"7000\" />\n      <workItem from=\"1540890746089\" duration=\"250000\" />\n      <workItem from=\"1540999445390\" duration=\"2264000\" />\n      <workItem from=\"1541002829851\" duration=\"15000\" />\n      <workItem from=\"1541162349030\" duration=\"8140000\" />\n      <workItem from=\"1541409741913\" duration=\"111000\" />\n      <workItem from=\"1541419855688\" duration=\"7868000\" />\n      <workItem from=\"1541493562590\" duration=\"106000\" />\n      <workItem from=\"1541493721898\" duration=\"9000\" />\n      <workItem from=\"1541515749864\" duration=\"342000\" />\n      <workItem from=\"1541519228932\" duration=\"3013000\" />\n      <workItem from=\"1541586839861\" duration=\"4000\" />\n      <workItem from=\"1541757772298\" duration=\"806000\" />\n      <workItem from=\"1541785692216\" duration=\"1285000\" />\n      <workItem from=\"1541796688299\" duration=\"1831000\" />\n      <workItem from=\"1542012424460\" duration=\"19000\" />\n      <workItem from=\"1542824433958\" duration=\"920000\" />\n      <workItem from=\"1542876292478\" duration=\"10368000\" />\n      <workItem from=\"1542897201213\" duration=\"5643000\" />\n      <workItem from=\"1542916145037\" duration=\"768000\" />\n      <workItem from=\"1542961690609\" duration=\"11147000\" />\n      <workItem from=\"1542981825279\" duration=\"698000\" />\n      <workItem from=\"1542988036713\" duration=\"140000\" />\n      <workItem from=\"1543228653730\" duration=\"970000\" />\n      <workItem from=\"1543409993714\" duration=\"718000\" />\n      <workItem from=\"1543412399013\" duration=\"1940000\" />\n      <workItem from=\"1543482309005\" duration=\"731000\" />\n      <workItem from=\"1543570921262\" duration=\"5514000\" />\n      <workItem from=\"1545323048500\" duration=\"956000\" />\n      <workItem from=\"1545639829800\" duration=\"16000\" />\n      <workItem from=\"1545640692197\" duration=\"183000\" />\n      <workItem from=\"1545655779423\" duration=\"111000\" />\n      <workItem from=\"1546615892899\" duration=\"3155000\" />\n      <workItem from=\"1546633644261\" duration=\"413000\" />\n      <workItem from=\"1546785220675\" duration=\"2089000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Initial commit of all code wars challenges I have completed so far.\">\n      <created>1542877251914</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542877251914</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Completed challenge &quot;Write a Java program to create a new array list, add some colors (string) and print out the collection&quot;\">\n      <created>1542877714721</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542877714721</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Completed challenge &quot;Write a Java program to iterate through all elements in a array list.&quot;\">\n      <created>1542878265906</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542878265906</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Completed challenge &quot;add en element to the start of an array list&quot;\">\n      <created>1542878614392</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542878614392</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Moved classes into a new package.\">\n      <created>1542878916804</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542878916804</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Completed challenge &quot;Write a Java program to retrieve an element (at a specified index) from a given array list.&quot;\">\n      <created>1542879167728</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542879167728</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Completed challenge &quot;Write a Java program to update specific array element by given element.&quot;\">\n      <created>1542879429198</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542879429198</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"Completed challenge &quot;Write a Java program to remove the third element from a array list.&quot;\">\n      <created>1542879733220</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542879733220</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"Completed challenge &quot;Write a Java program to search an element in a array list.&quot;\">\n      <created>1542882069242</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542882069242</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"Completed challenge &quot;Write a Java program to sort a given array list&quot;\">\n      <created>1542882207638</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542882207638</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"Completed challenge &quot;Write a Java program to copy one array list into another&quot;\">\n      <created>1542883062856</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542883062856</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"Completed challenge &quot;Write a Java program to shuffle elements in a array list.&quot;\">\n      <created>1542883269662</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542883269662</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"Completed challenge &quot;Write a Java program to reverse elements in a array list&quot;.\">\n      <created>1542884089878</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542884089878</updated>\n    </task>\n    <task id=\"LOCAL-00014\" summary=\"Completed challenge &quot;Write a Java program to extract a portion of a array list.&quot;\">\n      <created>1542885685819</created>\n      <option name=\"number\" value=\"00014\" />\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542885685820</updated>\n    </task>\n    <task id=\"LOCAL-00015\" summary=\"Completed challenge &quot;Write a Java program of swap two elements in an array list.&quot;\">\n      <created>1542887237742</created>\n      <option name=\"number\" value=\"00015\" />\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542887237742</updated>\n    </task>\n    <task id=\"LOCAL-00016\" summary=\"Completed challenge &quot;Write a Java program to join two array lists&quot;\">\n      <created>1542887640458</created>\n      <option name=\"number\" value=\"00016\" />\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542887640458</updated>\n    </task>\n    <task id=\"LOCAL-00017\" summary=\"Completed challenge &quot;Write a Java program to clone an array list&quot;\">\n      <created>1542891628221</created>\n      <option name=\"number\" value=\"00017\" />\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542891628221</updated>\n    </task>\n    <task id=\"LOCAL-00018\" summary=\"Completed challenge &quot;Write a Java program to empty an array list&quot;\">\n      <created>1542893064008</created>\n      <option name=\"number\" value=\"00018\" />\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542893064008</updated>\n    </task>\n    <task id=\"LOCAL-00019\" summary=\"Completed challenge &quot;Write a Java program to test an array list is empty or not.&quot;\">\n      <created>1542893349793</created>\n      <option name=\"number\" value=\"00019\" />\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542893349793</updated>\n    </task>\n    <task id=\"LOCAL-00020\" summary=\"Completed challenge &quot;Write a Java program to trim the capacity of an array list the current list size.&quot;\">\n      <created>1542893784422</created>\n      <option name=\"number\" value=\"00020\" />\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542893784422</updated>\n    </task>\n    <task id=\"LOCAL-00021\" summary=\"Completed challenge &quot;Write a Java program to increase the size of an array list.\">\n      <created>1542894182759</created>\n      <option name=\"number\" value=\"00021\" />\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1542894182760</updated>\n    </task>\n    <task id=\"LOCAL-00022\" summary=\"Completed challenge &quot;Write a Java program to append the specified element to the end of a linked list.&quot;\">\n      <created>1543229042001</created>\n      <option name=\"number\" value=\"00022\" />\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1543229042001</updated>\n    </task>\n    <task id=\"LOCAL-00023\" summary=\"Completed challenge &quot;Write a Java program to iterate through all elements in a linked list&quot;.\">\n      <created>1543229230900</created>\n      <option name=\"number\" value=\"00023\" />\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1543229230900</updated>\n    </task>\n    <task id=\"LOCAL-00024\" summary=\"Completed challenge &quot;Write a Java program to iterate through elements in a linked list starting at a specific index&quot;.\">\n      <created>1543410409210</created>\n      <option name=\"number\" value=\"00024\" />\n      <option name=\"presentableId\" value=\"LOCAL-00024\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1543410409210</updated>\n    </task>\n    <task id=\"LOCAL-00025\" summary=\"String Expression challenge can now take more than two values and perform any of the mathematical operations on them and return the result in the same format as they were given.\">\n      <created>1543414277827</created>\n      <option name=\"number\" value=\"00025\" />\n      <option name=\"presentableId\" value=\"LOCAL-00025\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1543414277827</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"26\" />\n    <servers />\n  </component>\n  <component name=\"TestHistory\">\n    <history-entry file=\"BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 14h 43m 32s.xml\">\n      <configuration name=\"BinaryChopTest.inputOfSize1AndContainsDesiredNumber\" configurationId=\"JUnit\" />\n    </history-entry>\n    <history-entry file=\"BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 14h 54m 35s.xml\">\n      <configuration name=\"BinaryChopTest.inputOfSize1AndContainsDesiredNumber\" configurationId=\"JUnit\" />\n    </history-entry>\n    <history-entry file=\"BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 14h 55m 20s.xml\">\n      <configuration name=\"BinaryChopTest.inputOfSize1AndContainsDesiredNumber\" configurationId=\"JUnit\" />\n    </history-entry>\n    <history-entry file=\"BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 14h 56m 30s.xml\">\n      <configuration name=\"BinaryChopTest.inputOfSize1AndContainsDesiredNumber\" configurationId=\"JUnit\" />\n    </history-entry>\n    <history-entry file=\"BinaryChopTest_inputOfSize1DoesNotContainNumber - 2019.01.06 at 14h 56m 33s.xml\">\n      <configuration name=\"BinaryChopTest.inputOfSize1DoesNotContainNumber\" configurationId=\"JUnit\" />\n    </history-entry>\n    <history-entry file=\"BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 15h 02m 14s.xml\">\n      <configuration name=\"BinaryChopTest.inputOfSize1AndContainsDesiredNumber\" configurationId=\"JUnit\" />\n    </history-entry>\n    <history-entry file=\"BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 15h 02m 44s.xml\">\n      <configuration name=\"BinaryChopTest.inputOfSize1AndContainsDesiredNumber\" configurationId=\"JUnit\" />\n    </history-entry>\n    <history-entry file=\"BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 15h 02m 58s.xml\">\n      <configuration name=\"BinaryChopTest.inputOfSize1AndContainsDesiredNumber\" configurationId=\"JUnit\" />\n    </history-entry>\n    <history-entry file=\"BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 15h 03m 30s.xml\">\n      <configuration name=\"BinaryChopTest.inputOfSize1AndContainsDesiredNumber\" configurationId=\"JUnit\" />\n    </history-entry>\n    <history-entry file=\"BinaryChopTest_inputOfSize1DoesNotContainNumber - 2019.01.06 at 15h 06m 34s.xml\">\n      <configuration name=\"BinaryChopTest.inputOfSize1DoesNotContainNumber\" configurationId=\"JUnit\" />\n    </history-entry>\n  </component>\n  <component name=\"TimeTrackingManager\">\n    <option name=\"totallyTimeSpent\" value=\"110363000\" />\n  </component>\n  <component name=\"ToolWindowManager\">\n    <frame x=\"0\" y=\"0\" width=\"1440\" height=\"900\" extended-state=\"0\" />\n    <editor active=\"true\" />\n    <layout>\n      <window_info content_ui=\"combo\" id=\"Project\" order=\"0\" visible=\"true\" weight=\"0.26680973\" />\n      <window_info id=\"Structure\" order=\"1\" side_tool=\"true\" weight=\"0.25\" />\n      <window_info id=\"Designer\" order=\"2\" />\n      <window_info id=\"Image Layers\" order=\"3\" />\n      <window_info id=\"UI Designer\" order=\"4\" />\n      <window_info id=\"Favorites\" order=\"5\" side_tool=\"true\" />\n      <window_info id=\"Capture Tool\" order=\"6\" />\n      <window_info anchor=\"bottom\" id=\"Message\" order=\"0\" />\n      <window_info anchor=\"bottom\" id=\"Find\" order=\"1\" weight=\"0.32891566\" />\n      <window_info active=\"true\" anchor=\"bottom\" id=\"Run\" order=\"2\" visible=\"true\" weight=\"0.34096387\" />\n      <window_info anchor=\"bottom\" id=\"Debug\" order=\"3\" weight=\"0.3987952\" />\n      <window_info anchor=\"bottom\" id=\"Cvs\" order=\"4\" weight=\"0.25\" />\n      <window_info anchor=\"bottom\" id=\"Inspection\" order=\"5\" weight=\"0.4\" />\n      <window_info anchor=\"bottom\" id=\"TODO\" order=\"6\" />\n      <window_info anchor=\"bottom\" id=\"Build\" order=\"7\" weight=\"0.32891566\" />\n      <window_info anchor=\"bottom\" id=\"Terminal\" order=\"8\" sideWeight=\"0.49928468\" weight=\"0.29036143\" />\n      <window_info anchor=\"bottom\" id=\"Event Log\" order=\"9\" sideWeight=\"0.5007153\" side_tool=\"true\" weight=\"0.27951807\" />\n      <window_info anchor=\"bottom\" id=\"Messages\" order=\"10\" weight=\"0.32650602\" />\n      <window_info anchor=\"bottom\" id=\"Database Changes\" order=\"11\" show_stripe_button=\"false\" />\n      <window_info anchor=\"bottom\" id=\"Version Control\" order=\"12\" weight=\"0.32891566\" />\n      <window_info anchor=\"bottom\" id=\"Docker\" order=\"13\" show_stripe_button=\"false\" />\n      <window_info anchor=\"right\" id=\"Commander\" internal_type=\"SLIDING\" order=\"0\" type=\"SLIDING\" weight=\"0.4\" />\n      <window_info anchor=\"right\" id=\"Ant Build\" order=\"1\" weight=\"0.25\" />\n      <window_info anchor=\"right\" content_ui=\"combo\" id=\"Hierarchy\" order=\"2\" weight=\"0.25\" />\n      <window_info anchor=\"right\" id=\"Palette\" order=\"3\" />\n      <window_info anchor=\"right\" id=\"Capture Analysis\" order=\"4\" />\n      <window_info anchor=\"right\" id=\"Maven Projects\" order=\"5\" weight=\"0.3297568\" />\n      <window_info anchor=\"right\" id=\"Gradle\" order=\"6\" weight=\"0.3297568\" />\n      <window_info anchor=\"right\" id=\"Database\" order=\"7\" />\n      <window_info anchor=\"right\" id=\"Palette&#9;\" order=\"8\" />\n      <window_info anchor=\"right\" id=\"Theme Preview\" order=\"9\" />\n      <window_info anchor=\"right\" id=\"Coverage\" order=\"10\" side_tool=\"true\" weight=\"0.32904148\" />\n      <window_info anchor=\"right\" id=\"Maven\" order=\"11\" />\n    </layout>\n    <layout-to-restore>\n      <window_info content_ui=\"combo\" id=\"Project\" order=\"0\" visible=\"true\" weight=\"0.20171674\" />\n      <window_info id=\"Structure\" order=\"1\" side_tool=\"true\" weight=\"0.25\" />\n      <window_info id=\"Designer\" order=\"2\" />\n      <window_info id=\"Image Layers\" order=\"3\" />\n      <window_info id=\"UI Designer\" order=\"4\" />\n      <window_info id=\"Favorites\" order=\"5\" side_tool=\"true\" />\n      <window_info id=\"Capture Tool\" order=\"6\" />\n      <window_info anchor=\"bottom\" id=\"Message\" order=\"0\" />\n      <window_info anchor=\"bottom\" id=\"Find\" order=\"1\" />\n      <window_info anchor=\"bottom\" id=\"Run\" order=\"2\" weight=\"0.34322035\" />\n      <window_info anchor=\"bottom\" id=\"Debug\" order=\"3\" weight=\"0.3997175\" />\n      <window_info anchor=\"bottom\" id=\"Cvs\" order=\"4\" weight=\"0.25\" />\n      <window_info anchor=\"bottom\" id=\"Inspection\" order=\"5\" weight=\"0.4\" />\n      <window_info anchor=\"bottom\" id=\"TODO\" order=\"6\" />\n      <window_info anchor=\"bottom\" id=\"Build\" order=\"7\" weight=\"0.32891566\" />\n      <window_info anchor=\"bottom\" id=\"Terminal\" order=\"8\" weight=\"0.3284974\" />\n      <window_info anchor=\"bottom\" id=\"Event Log\" order=\"9\" side_tool=\"true\" weight=\"0.32891566\" />\n      <window_info active=\"true\" anchor=\"bottom\" id=\"Messages\" order=\"10\" visible=\"true\" weight=\"0.32768363\" />\n      <window_info anchor=\"bottom\" id=\"Database Changes\" order=\"11\" show_stripe_button=\"false\" />\n      <window_info anchor=\"bottom\" id=\"Version Control\" order=\"12\" show_stripe_button=\"false\" />\n      <window_info anchor=\"right\" id=\"Commander\" internal_type=\"SLIDING\" order=\"0\" type=\"SLIDING\" weight=\"0.4\" />\n      <window_info anchor=\"right\" id=\"Ant Build\" order=\"1\" weight=\"0.25\" />\n      <window_info anchor=\"right\" content_ui=\"combo\" id=\"Hierarchy\" order=\"2\" weight=\"0.25\" />\n      <window_info anchor=\"right\" id=\"Palette\" order=\"3\" />\n      <window_info anchor=\"right\" id=\"Capture Analysis\" order=\"4\" />\n      <window_info anchor=\"right\" id=\"Maven Projects\" order=\"5\" />\n      <window_info anchor=\"right\" id=\"Gradle\" order=\"6\" weight=\"0.3297568\" />\n      <window_info anchor=\"right\" id=\"Database\" order=\"7\" />\n      <window_info anchor=\"right\" id=\"Palette&#9;\" order=\"8\" />\n      <window_info anchor=\"right\" id=\"Theme Preview\" order=\"9\" />\n      <window_info anchor=\"right\" id=\"Coverage\" order=\"10\" side_tool=\"true\" weight=\"0.32960597\" />\n    </layout-to-restore>\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"1\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Initial commit of all code wars challenges I have completed so far.\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to create a new array list, add some colors (string) and print out the collection&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to iterate through all elements in a array list.&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;add en element to the start of an array list&quot;\" />\n    <MESSAGE value=\"Moved classes into a new package.\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to retrieve an element (at a specified index) from a given array list.&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to update specific array element by given element.&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to remove the third element from a array list.&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to search an element in a array list.&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to sort a given array list&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to copy one array list into another&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to shuffle elements in a array list.&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to reverse elements in a array list&quot;.\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to extract a portion of a array list.&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program of swap two elements in an array list.&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to join two array lists&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to clone an array list&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to empty an array list&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to test an array list is empty or not.&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to trim the capacity of an array list the current list size.&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to increase the size of an array list.\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to append the specified element to the end of a linked list.&quot;\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to iterate through all elements in a linked list&quot;.\" />\n    <MESSAGE value=\"Completed challenge &quot;Write a Java program to iterate through elements in a linked list starting at a specific index&quot;.\" />\n    <MESSAGE value=\"String Expression challenge can now take more than two values and perform any of the mathematical operations on them and return the result in the same format as they were given.\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"String Expression challenge can now take more than two values and perform any of the mathematical operations on them and return the result in the same format as they were given.\" />\n    <option name=\"OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT\" value=\"true\" />\n  </component>\n  <component name=\"editorHistoryManager\">\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CopyArrayList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"358\">\n          <caret line=\"25\" column=\"47\" selection-start-line=\"25\" selection-start-column=\"47\" selection-end-line=\"25\" selection-end-column=\"47\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/SortList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"210\">\n          <caret line=\"14\" column=\"43\" selection-start-line=\"14\" selection-start-column=\"43\" selection-end-line=\"14\" selection-end-column=\"43\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/SearchForAnElement.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"105\">\n          <caret line=\"7\" selection-start-line=\"7\" selection-end-line=\"23\" selection-end-column=\"5\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/RemoveThirdElement.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"180\">\n          <caret line=\"12\" column=\"23\" selection-start-line=\"12\" selection-start-column=\"23\" selection-end-line=\"12\" selection-end-column=\"23\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ChangeValueAtGivenIndex.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"210\">\n          <caret line=\"14\" column=\"32\" selection-start-line=\"14\" selection-start-column=\"32\" selection-end-line=\"14\" selection-end-column=\"32\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/RetrieveElementFromArrayList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"225\">\n          <caret line=\"15\" column=\"41\" selection-start-line=\"15\" selection-start-column=\"41\" selection-end-line=\"15\" selection-end-column=\"41\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/IterateThroughArrayList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"34\">\n          <caret line=\"5\" column=\"13\" selection-start-line=\"5\" selection-start-column=\"13\" selection-end-line=\"5\" selection-end-column=\"13\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ShuffleList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"330\">\n          <caret line=\"22\" column=\"36\" selection-start-line=\"22\" selection-start-column=\"36\" selection-end-line=\"22\" selection-end-column=\"36\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ReverseList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"270\">\n          <caret line=\"18\" column=\"35\" selection-start-line=\"18\" selection-start-column=\"35\" selection-end-line=\"18\" selection-end-column=\"35\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ExtractPortionOfArrayList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"285\">\n          <caret line=\"19\" column=\"5\" selection-start-line=\"19\" selection-start-column=\"5\" selection-end-line=\"19\" selection-end-column=\"5\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CompareTwoLists.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"540\">\n          <caret line=\"36\" column=\"9\" lean-forward=\"true\" selection-start-line=\"36\" selection-start-column=\"9\" selection-end-line=\"36\" selection-end-column=\"9\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/JoinTwoLists.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"240\">\n          <caret line=\"16\" column=\"49\" selection-start-line=\"16\" selection-start-column=\"49\" selection-end-line=\"16\" selection-end-column=\"49\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CloneList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"135\">\n          <caret line=\"9\" column=\"71\" lean-forward=\"true\" selection-start-line=\"9\" selection-start-column=\"71\" selection-end-line=\"9\" selection-end-column=\"71\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/SwapTwoElements.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"135\">\n          <caret line=\"9\" lean-forward=\"true\" selection-start-line=\"9\" selection-end-line=\"9\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/EmptyAList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"270\">\n          <caret line=\"18\" column=\"29\" selection-start-line=\"18\" selection-start-column=\"29\" selection-end-line=\"18\" selection-end-column=\"29\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/TestIfListIsEmpty.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"195\">\n          <caret line=\"13\" lean-forward=\"true\" selection-start-line=\"13\" selection-end-line=\"13\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/IncreaseSize.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"150\">\n          <caret line=\"10\" column=\"4\" selection-start-line=\"10\" selection-start-column=\"4\" selection-end-line=\"10\" selection-end-column=\"4\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/ReplaceSecondElement.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"210\">\n          <caret line=\"14\" column=\"31\" selection-start-line=\"14\" selection-start-column=\"31\" selection-end-line=\"14\" selection-end-column=\"31\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/PrintListUsingIndex.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"225\">\n          <caret line=\"15\" column=\"39\" selection-start-line=\"15\" selection-start-column=\"39\" selection-end-line=\"15\" selection-end-column=\"39\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/TrimList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"180\">\n          <caret line=\"12\" column=\"26\" lean-forward=\"true\" selection-start-line=\"12\" selection-start-column=\"26\" selection-end-line=\"12\" selection-end-column=\"26\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/util/ArrayList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"-3293\">\n          <caret line=\"164\" column=\"11\" selection-start-line=\"164\" selection-start-column=\"11\" selection-end-line=\"164\" selection-end-column=\"11\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/AddElementToStartOfList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"150\">\n          <caret line=\"10\" column=\"38\" lean-forward=\"true\" selection-start-line=\"10\" selection-start-column=\"38\" selection-end-line=\"10\" selection-end-column=\"38\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/MessAbout.java\" />\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpressionObject.java\" />\n    <entry file=\"jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/lang/String.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"334\">\n          <caret line=\"2237\" column=\"18\" selection-start-line=\"2237\" selection-start-column=\"18\" selection-end-line=\"2237\" selection-end-column=\"18\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/AppendItemToEndOfList.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"150\">\n          <caret line=\"10\" column=\"39\" lean-forward=\"true\" selection-start-line=\"10\" selection-start-column=\"39\" selection-end-line=\"10\" selection-end-column=\"39\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughAllElements.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"210\">\n          <caret line=\"14\" column=\"38\" selection-start-line=\"14\" selection-start-column=\"38\" selection-end-line=\"14\" selection-end-column=\"38\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateThroughListStartingAtSpecific.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"240\">\n          <caret line=\"16\" column=\"9\" selection-start-line=\"16\" selection-start-column=\"9\" selection-end-line=\"16\" selection-end-column=\"9\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/IterateInReverseOrder.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"210\">\n          <caret line=\"14\" column=\"52\" selection-start-line=\"14\" selection-start-column=\"52\" selection-end-line=\"14\" selection-end-column=\"52\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"195\">\n          <caret line=\"13\" selection-start-line=\"13\" selection-end-line=\"13\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/StringExpressionTest.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"296\">\n          <caret line=\"75\" column=\"49\" lean-forward=\"true\" selection-start-line=\"75\" selection-start-column=\"49\" selection-end-line=\"75\" selection-end-column=\"49\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/exceptions/InvalidOperatorException.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"90\">\n          <caret line=\"6\" column=\"5\" lean-forward=\"true\" selection-start-line=\"6\" selection-start-column=\"5\" selection-end-line=\"6\" selection-end-column=\"5\" />\n          <folding>\n            <element signature=\"e#190#191#0\" expanded=\"true\" />\n            <element signature=\"e#220#221#0\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/Expression.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"135\">\n          <caret line=\"9\" column=\"20\" selection-start-line=\"9\" selection-start-column=\"20\" selection-end-line=\"9\" selection-end-column=\"20\" />\n          <folding>\n            <element signature=\"e#616#617#0\" expanded=\"true\" />\n            <element signature=\"e#642#643#0\" expanded=\"true\" />\n            <element signature=\"e#812#813#0\" expanded=\"true\" />\n            <element signature=\"e#839#840#0\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/challenges/test.java\" />\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpression.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"360\">\n          <caret line=\"24\" column=\"79\" selection-start-line=\"24\" selection-start-column=\"79\" selection-end-line=\"24\" selection-end-column=\"79\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/challenges/sumofnumbers/SumOfNumbersStreamsSolution.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state>\n          <caret line=\"5\" selection-start-line=\"5\" selection-end-line=\"5\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/challenges/countofpositivessumofnegatives/CountOfPositivesSumOfNegatives.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"90\">\n          <caret line=\"9\" column=\"17\" selection-start-line=\"9\" selection-start-column=\"17\" selection-end-line=\"10\" selection-end-column=\"17\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/util/stream/Stream.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"106\">\n          <caret line=\"374\" column=\"14\" selection-start-line=\"374\" selection-start-column=\"14\" selection-end-line=\"374\" selection-end-column=\"14\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/challenges/sortedyesnohow/SortedYesNoHow.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"60\">\n          <caret line=\"4\" selection-start-line=\"4\" selection-end-line=\"4\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/challenges/sortedyesnohow/SortedYesNoHowTest.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"495\">\n          <caret line=\"33\" selection-start-line=\"33\" selection-end-line=\"33\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/lambdasKata.java\" />\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/lambdaskata/LambdasKata.java\" />\n    <entry file=\"file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/lambdaskata/LambdasKataTest.java\" />\n    <entry file=\"jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/util/stream/Collectors.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"203\">\n          <caret line=\"228\" column=\"29\" selection-start-line=\"228\" selection-start-column=\"29\" selection-end-line=\"228\" selection-end-column=\"29\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/lambdaskata/OddNumberRemoverTest.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"180\">\n          <caret line=\"12\" column=\"33\" lean-forward=\"true\" selection-start-line=\"12\" selection-start-column=\"33\" selection-end-line=\"12\" selection-end-column=\"33\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/lambdaskata/OddNumberRemover.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"120\">\n          <caret line=\"8\" column=\"52\" selection-start-line=\"8\" selection-start-column=\"52\" selection-end-line=\"8\" selection-end-column=\"52\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/Shit.java\" />\n    <entry file=\"file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"585\">\n          <caret line=\"45\" selection-start-line=\"45\" selection-end-line=\"45\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"438\">\n          <caret line=\"74\" column=\"20\" selection-start-line=\"74\" selection-start-column=\"20\" selection-end-line=\"74\" selection-end-column=\"20\" />\n          <folding>\n            <element signature=\"e#2067#2068#0\" expanded=\"true\" />\n            <element signature=\"e#2094#2095#0\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"255\">\n          <caret line=\"25\" column=\"5\" lean-forward=\"true\" selection-start-line=\"25\" selection-start-column=\"5\" selection-end-line=\"25\" selection-end-column=\"5\" />\n          <folding>\n            <element signature=\"e#550#551#0\" expanded=\"true\" />\n            <element signature=\"e#610#611#0\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"210\">\n          <caret line=\"17\" selection-start-line=\"17\" selection-end-line=\"17\" />\n        </state>\n      </provider>\n    </entry>\n  </component>\n  <component name=\"masterDetails\">\n    <states>\n      <state key=\"ArtifactsStructureConfigurable.UI\">\n        <settings>\n          <artifact-editor />\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"FacetStructureConfigurable.UI\">\n        <settings>\n          <last-edited>No facets are configured</last-edited>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"GlobalLibrariesConfigurable.UI\">\n        <settings>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"JdkListConfigurable.UI\">\n        <settings>\n          <last-edited>1.8</last-edited>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"ModuleStructureConfigurable.UI\">\n        <settings>\n          <last-edited>Code_Wars_main|Code_Wars</last-edited>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"ProjectJDKs.UI\">\n        <settings>\n          <last-edited>10</last-edited>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"ProjectLibrariesConfigurable.UI\">\n        <settings>\n          <last-edited>Gradle: junit:junit:4.12</last-edited>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"ScopeChooserConfigurable.UI\">\n        <settings>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n    </states>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 12863dbd01fe11e7decdc03175414d40e738e802)
++++ .idea/workspace.xml	(date 1547740170000)
+@@ -2,12 +2,11 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="ebdd8f42-6ae6-4683-a9fb-5413e6aebe43" name="Default Changelist" comment="">
+-      <change beforePath="$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/test/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/test/classes/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.java" afterDir="false" />
+     </list>
+     <ignored path="$PROJECT_DIR$/out/" />
+     <ignored path="$PROJECT_DIR$/.gradle/" />
+@@ -55,12 +54,24 @@
+     </system>
+   </component>
+   <component name="FileEditorManager">
+-    <leaf>
+-      <file pinned="false" current-in-tab="true">
++    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
++      <file pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="210">
+-              <caret line="17" selection-start-line="17" selection-end-line="17" />
++            <state relative-caret-position="615">
++              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
++              <folding>
++                <element signature="imports" expanded="true" />
++              </folding>
++            </state>
++          </provider>
++        </entry>
++      </file>
++      <file pinned="false" current-in-tab="true">
++        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.java">
++          <provider selected="true" editor-type-id="text-editor">
++            <state relative-caret-position="30">
++              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+             </state>
+           </provider>
+         </entry>
+@@ -68,11 +79,10 @@
+       <file pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="255">
+-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
++            <state relative-caret-position="300">
++              <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+               <folding>
+-                <element signature="e#550#551#0" expanded="true" />
+-                <element signature="e#610#611#0" expanded="true" />
++                <element signature="imports" expanded="true" />
+               </folding>
+             </state>
+           </provider>
+@@ -177,64 +187,9 @@
+       <foldersAlwaysOnTop value="true" />
+     </navigator>
+     <panes>
+-      <pane id="PackagesPane" />
+       <pane id="Scope" />
+-      <pane id="ProjectPane">
+-        <subPane>
+-          <expand>
+-            <path>
+-              <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
+-              <item name="src" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
+-              <item name="src" type="462c0819:PsiDirectoryNode" />
+-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
+-              <item name="src" type="462c0819:PsiDirectoryNode" />
+-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+-              <item name="java" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
+-              <item name="src" type="462c0819:PsiDirectoryNode" />
+-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+-              <item name="java" type="462c0819:PsiDirectoryNode" />
+-              <item name="autotrader" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
+-              <item name="src" type="462c0819:PsiDirectoryNode" />
+-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+-              <item name="java" type="462c0819:PsiDirectoryNode" />
+-              <item name="autotrader" type="462c0819:PsiDirectoryNode" />
+-              <item name="randomchallenges" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
+-              <item name="src" type="462c0819:PsiDirectoryNode" />
+-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+-              <item name="java" type="462c0819:PsiDirectoryNode" />
+-              <item name="autotrader" type="462c0819:PsiDirectoryNode" />
+-              <item name="randomchallenges" type="462c0819:PsiDirectoryNode" />
+-              <item name="binarychop" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-          </expand>
+-          <select />
+-        </subPane>
+-      </pane>
++      <pane id="ProjectPane" />
++      <pane id="PackagesPane" />
+     </panes>
+   </component>
+   <component name="PropertiesComponent">
+@@ -252,7 +207,7 @@
+     <property name="Repository.Attach.Sources" value="false" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+     <property name="aspect.path.notification.shown" value="true" />
+-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546787332270" />
++    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547740155825" />
+     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+     <property name="extract.method.default.visibility" value="private" />
+@@ -287,8 +242,8 @@
+       </list>
+     </option>
+   </component>
+-  <component name="RunManager" selected="JUnit.BinaryChopTest.inputOfSize1DoesNotContainNumber">
+-    <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++  <component name="RunManager" selected="JUnit.BinaryChopTest">
++    <configuration name="BinaryChopTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="Code_Wars_test" />
+       <extension name="coverage">
+         <pattern>
+@@ -298,13 +253,12 @@
+       </extension>
+       <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges.binarychop" />
+       <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.binarychop.BinaryChopTest" />
+-      <option name="METHOD_NAME" value="inputOfSize1AndContainsDesiredNumber" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="BinaryChopTest.inputOfSize1DoesNotContainNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="Code_Wars_test" />
+       <extension name="coverage">
+         <pattern>
+@@ -314,43 +268,45 @@
+       </extension>
+       <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges.binarychop" />
+       <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.binarychop.BinaryChopTest" />
+-      <option name="METHOD_NAME" value="inputOfSize1DoesNotContainNumber" />
++      <option name="METHOD_NAME" value="inputOfSize1AndContainsDesiredNumber" />
+       <option name="TEST_OBJECT" value="method" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="OddNumberRemoverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="BinaryChopTest.inputOfSize1DoesNotContainNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="Code_Wars_test" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.lambdaskata.*" />
++          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.binarychop.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+-      <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges.lambdaskata" />
+-      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.lambdaskata.OddNumberRemoverTest" />
++      <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges.binarychop" />
++      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.binarychop.BinaryChopTest" />
++      <option name="METHOD_NAME" value="inputOfSize1DoesNotContainNumber" />
++      <option name="TEST_OBJECT" value="method" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="OddNumberRemoverTest.removesOddNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="BinaryChopTest.uberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="Code_Wars_test" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.lambdaskata.*" />
++          <option name="PATTERN" value="uk.co.autotrader.randomchallenges.binarychop.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+-      <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges.lambdaskata" />
+-      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.lambdaskata.OddNumberRemoverTest" />
+-      <option name="METHOD_NAME" value="removesOddNumbers" />
++      <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges.binarychop" />
++      <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.binarychop.BinaryChopTest" />
++      <option name="METHOD_NAME" value="uberTest" />
+       <option name="TEST_OBJECT" value="method" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="OddNumberRemoverTest.testOtherSomeLibraryMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="OddNumberRemoverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="Code_Wars_test" />
+       <extension name="coverage">
+         <pattern>
+@@ -360,26 +316,25 @@
+       </extension>
+       <option name="PACKAGE_NAME" value="uk.co.autotrader.randomchallenges.lambdaskata" />
+       <option name="MAIN_CLASS_NAME" value="uk.co.autotrader.randomchallenges.lambdaskata.OddNumberRemoverTest" />
+-      <option name="METHOD_NAME" value="testOtherSomeLibraryMethod" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+     <list>
+-      <item itemvalue="JUnit.OddNumberRemoverTest.removesOddNumbers" />
+-      <item itemvalue="JUnit.OddNumberRemoverTest.testOtherSomeLibraryMethod" />
+       <item itemvalue="JUnit.OddNumberRemoverTest" />
+       <item itemvalue="JUnit.BinaryChopTest.inputOfSize1AndContainsDesiredNumber" />
+       <item itemvalue="JUnit.BinaryChopTest.inputOfSize1DoesNotContainNumber" />
++      <item itemvalue="JUnit.BinaryChopTest" />
++      <item itemvalue="JUnit.BinaryChopTest.uberTest" />
+     </list>
+     <recent_temporary>
+       <list>
++        <item itemvalue="JUnit.BinaryChopTest" />
++        <item itemvalue="JUnit.BinaryChopTest.uberTest" />
+         <item itemvalue="JUnit.BinaryChopTest.inputOfSize1DoesNotContainNumber" />
+         <item itemvalue="JUnit.BinaryChopTest.inputOfSize1AndContainsDesiredNumber" />
+         <item itemvalue="JUnit.OddNumberRemoverTest" />
+-        <item itemvalue="JUnit.OddNumberRemoverTest.testOtherSomeLibraryMethod" />
+-        <item itemvalue="JUnit.OddNumberRemoverTest.removesOddNumbers" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -433,6 +388,15 @@
+       <workItem from="1546615892899" duration="3155000" />
+       <workItem from="1546633644261" duration="413000" />
+       <workItem from="1546785220675" duration="2089000" />
++      <workItem from="1546852298009" duration="20000" />
++      <workItem from="1546853188979" duration="664000" />
++      <workItem from="1547067707753" duration="298000" />
++      <workItem from="1547132910286" duration="1676000" />
++      <workItem from="1547140272215" duration="4000" />
++      <workItem from="1547219480728" duration="415000" />
++      <workItem from="1547456337500" duration="57000" />
++      <workItem from="1547592197925" duration="367000" />
++      <workItem from="1547629112508" duration="8000" />
+     </task>
+     <task id="LOCAL-00001" summary="Initial commit of all code wars challenges I have completed so far.">
+       <created>1542877251914</created>
+@@ -613,15 +577,6 @@
+     <servers />
+   </component>
+   <component name="TestHistory">
+-    <history-entry file="BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 14h 43m 32s.xml">
+-      <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" configurationId="JUnit" />
+-    </history-entry>
+-    <history-entry file="BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 14h 54m 35s.xml">
+-      <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" configurationId="JUnit" />
+-    </history-entry>
+-    <history-entry file="BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 14h 55m 20s.xml">
+-      <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" configurationId="JUnit" />
+-    </history-entry>
+     <history-entry file="BinaryChopTest_inputOfSize1AndContainsDesiredNumber - 2019.01.06 at 14h 56m 30s.xml">
+       <configuration name="BinaryChopTest.inputOfSize1AndContainsDesiredNumber" configurationId="JUnit" />
+     </history-entry>
+@@ -642,16 +597,24 @@
+     </history-entry>
+     <history-entry file="BinaryChopTest_inputOfSize1DoesNotContainNumber - 2019.01.06 at 15h 06m 34s.xml">
+       <configuration name="BinaryChopTest.inputOfSize1DoesNotContainNumber" configurationId="JUnit" />
++    </history-entry>
++    <history-entry file="BinaryChopTest - 2019.01.10 at 15h 10m 56s.xml">
++      <configuration name="BinaryChopTest" configurationId="JUnit" />
++    </history-entry>
++    <history-entry file="BinaryChopTest_uberTest - 2019.01.10 at 15h 11m 14s.xml">
++      <configuration name="BinaryChopTest.uberTest" configurationId="JUnit" />
++    </history-entry>
++    <history-entry file="BinaryChopTest - 2019.01.10 at 15h 11m 18s.xml">
++      <configuration name="BinaryChopTest" configurationId="JUnit" />
+     </history-entry>
+   </component>
+   <component name="TimeTrackingManager">
+-    <option name="totallyTimeSpent" value="110363000" />
++    <option name="totallyTimeSpent" value="114241000" />
+   </component>
+   <component name="ToolWindowManager">
+     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+-    <editor active="true" />
+     <layout>
+-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26680973" />
++      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29971388" />
+       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+       <window_info id="Designer" order="2" />
+       <window_info id="Image Layers" order="3" />
+@@ -660,13 +623,13 @@
+       <window_info id="Capture Tool" order="6" />
+       <window_info anchor="bottom" id="Message" order="0" />
+       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
+-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34096387" />
++      <window_info anchor="bottom" id="Run" order="2" weight="0.34096387" />
+       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
+       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+       <window_info anchor="bottom" id="TODO" order="6" />
+       <window_info anchor="bottom" id="Build" order="7" weight="0.32891566" />
+-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.29036143" />
++      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.2879518" />
+       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007153" side_tool="true" weight="0.27951807" />
+       <window_info anchor="bottom" id="Messages" order="10" weight="0.32650602" />
+       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+@@ -686,7 +649,7 @@
+       <window_info anchor="right" id="Maven" order="11" />
+     </layout>
+     <layout-to-restore>
+-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20171674" />
++      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26680973" />
+       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+       <window_info id="Designer" order="2" />
+       <window_info id="Image Layers" order="3" />
+@@ -694,29 +657,31 @@
+       <window_info id="Favorites" order="5" side_tool="true" />
+       <window_info id="Capture Tool" order="6" />
+       <window_info anchor="bottom" id="Message" order="0" />
+-      <window_info anchor="bottom" id="Find" order="1" />
+-      <window_info anchor="bottom" id="Run" order="2" weight="0.34322035" />
+-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
++      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
++      <window_info anchor="bottom" id="Run" order="2" weight="0.34096387" />
++      <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
+       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+       <window_info anchor="bottom" id="TODO" order="6" />
+       <window_info anchor="bottom" id="Build" order="7" weight="0.32891566" />
+-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3284974" />
+-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32891566" />
+-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32768363" />
++      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.29036143" />
++      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007153" side_tool="true" weight="0.27951807" />
++      <window_info anchor="bottom" id="Messages" order="10" weight="0.32650602" />
+       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+-      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
++      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32891566" />
++      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
+       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+       <window_info anchor="right" id="Palette" order="3" />
+       <window_info anchor="right" id="Capture Analysis" order="4" />
+-      <window_info anchor="right" id="Maven Projects" order="5" />
++      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3297568" />
+       <window_info anchor="right" id="Gradle" order="6" weight="0.3297568" />
+       <window_info anchor="right" id="Database" order="7" />
+       <window_info anchor="right" id="Palette&#9;" order="8" />
+       <window_info anchor="right" id="Theme Preview" order="9" />
+-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32960597" />
++      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32904148" />
++      <window_info anchor="right" id="Maven" order="11" />
+     </layout-to-restore>
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -752,13 +717,6 @@
+     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+   </component>
+   <component name="editorHistoryManager">
+-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CopyArrayList.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="358">
+-          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/SortList.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="210">
+@@ -1066,40 +1024,45 @@
+     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/Shit.java" />
+     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="585">
+-          <caret line="45" selection-start-line="45" selection-end-line="45" />
++        <state relative-caret-position="630">
++          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+           <folding>
+             <element signature="imports" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.java">
++    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/lang/Integer.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="-1038">
++          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="438">
+-          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
++        <state relative-caret-position="615">
++          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+           <folding>
+-            <element signature="e#2067#2068#0" expanded="true" />
+-            <element signature="e#2094#2095#0" expanded="true" />
++            <element signature="imports" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChopTest.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="255">
+-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
++        <state relative-caret-position="300">
++          <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+           <folding>
+-            <element signature="e#550#551#0" expanded="true" />
+-            <element signature="e#610#611#0" expanded="true" />
++            <element signature="imports" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/binarychop/BinaryChop.java">
++    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="210">
+-          <caret line="17" selection-start-line="17" selection-end-line="17" />
++        <state relative-caret-position="30">
++          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+         </state>
+       </provider>
+     </entry>
