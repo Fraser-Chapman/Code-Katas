@@ -2,7 +2,7 @@ package uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.vegetab
 
 public class Broccoli extends Vegetable {
     @Override
-    public boolean isRootVegetable() {
+    public Boolean isRootVegetable() {
         return false;
     }
 

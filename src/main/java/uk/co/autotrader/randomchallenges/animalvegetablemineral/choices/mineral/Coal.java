@@ -2,7 +2,7 @@ package uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.mineral
 
 public class Coal extends Mineral {
     @Override
-    public boolean isShiny() {
+    public Boolean isShiny() {
         return false;
     }
 

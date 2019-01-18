@@ -1,6 +1,6 @@
 package uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.mineral;
 
-import uk.co.autotrader.randomchallenges.animalvegetablemineral.Choice;
+import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.Choice;
 
 public abstract class Mineral implements Choice {
 

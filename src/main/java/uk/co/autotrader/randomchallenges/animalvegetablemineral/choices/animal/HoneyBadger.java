@@ -1,23 +1,23 @@
 package uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal;
 
 public class HoneyBadger extends Animal {
-    public int getNumberOfLegs() {
+    public Integer getNumberOfLegs() {
         return 4;
     }
 
-    public boolean hasTail() {
+    public Boolean hasTail() {
         return true;
     }
 
-    public boolean hasFur() {
+    public Boolean hasFur() {
         return true;
     }
 
-    public boolean isCarnivore() {
+    public Boolean isCarnivore() {
         return false;
     }
 
-    public boolean isDomesticated() {
+    public Boolean isDomesticated() {
         return false;
     }
 

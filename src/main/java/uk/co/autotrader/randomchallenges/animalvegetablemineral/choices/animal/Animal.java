@@ -1,11 +1,11 @@
 package uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal;
 
-import uk.co.autotrader.randomchallenges.animalvegetablemineral.Choice;
+import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.Choice;
 
 public abstract class Animal implements Choice {
 
     @Override
-    public int getNumberOfLegs() {
+    public Integer getNumberOfLegs() {
         return 2;
     }
 

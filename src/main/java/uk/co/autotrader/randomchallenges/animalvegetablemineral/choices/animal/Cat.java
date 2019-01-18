@@ -3,7 +3,7 @@ package uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.animal;
 public class Cat extends Feline {
 
     @Override
-    public boolean isDomesticated() {
+    public Boolean isDomesticated() {
         return true;
     }
 
