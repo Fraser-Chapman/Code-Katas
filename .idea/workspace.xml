@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebdd8f42-6ae6-4683-a9fb-5413e6aebe43" name="Default Changelist" comment="Implemented question one. Animal, Mineral or Vegetable?">
-      <change beforePath="$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrosses.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/META-INF/Code_Wars_main.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/uk/co/autotrader/randomchallenges/naughtsandcrosses/NaughtsAndCrossesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/rockpaperscissors/RockPaperScissorsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/rockpaperscissors/RockPaperScissorsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/QuestionsBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/unnamed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/animalvegetablemineral/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/uk/co/autotrader/randomchallenges/animalvegetablemineral/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/Game.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -18,14 +19,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Code_Wars$StringExpressionTest_shouldTakeTwoMultipleDigitNumbersAndAddThemTogether.ic" NAME="StringExpressionTest.shouldTakeTwoMultipleDigitNumbersAndAddThemTogether Coverage Results" MODIFIED="1542898581526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>uk.co.autotrader.randomchallenges.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/Code_Wars$TripleTroubleTest.ic" NAME="TripleTroubleTest Coverage Results" MODIFIED="1539786033686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>uk.co.autotrader.challenges.tripletrouble.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Code_Wars$TripleTrouble.ic" NAME="TripleTrouble Coverage Results" MODIFIED="1539786113120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>uk.co.autotrader.challenges.tripletrouble.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Code_Wars$StringExpressionTest_shouldTakeTwoMultipleDigitNumbersAndAddThemTogether.ic" NAME="StringExpressionTest.shouldTakeTwoMultipleDigitNumbersAndAddThemTogether Coverage Results" MODIFIED="1542898581526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>uk.co.autotrader.randomchallenges.*</FILTER>
     </SUITE>
   </component>
   <component name="CoverageViewManager">
@@ -55,11 +56,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+            <state relative-caret-position="550">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="33" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,43 +69,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Animal.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/QuestionsBank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/HoneyBadger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="13" column="5" selection-start-line="11" selection-end-line="13" selection-end-column="5" />
+            <state relative-caret-position="221">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
               <folding>
-                <element signature="e#161#162#0" expanded="true" />
-                <element signature="e#185#186#0" expanded="true" />
-                <element signature="e#275#276#0" expanded="true" />
-                <element signature="e#302#303#0" expanded="true" />
+                <element signature="e#265#266#0" expanded="true" />
+                <element signature="e#325#326#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Feline.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Cat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/Choice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding>
+                <element signature="e#167#168#0" expanded="true" />
+                <element signature="e#194#195#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,8 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/JoinTwoLists.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/CloneList.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/EmptyAList.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/TestIfListIsEmpty.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/TrimList.java" />
@@ -192,9 +175,11 @@
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Animal.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Feline.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/AnimalVegetableMineral.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/HoneyBadger.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/Choice.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/QuestionBank.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/QuestionsBank.java" />
       </list>
     </option>
   </component>
@@ -204,9 +189,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="2560" />
+    <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -214,35 +199,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code-Katas" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code-Katas" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code-Katas" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code-Katas" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code-Katas" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -250,7 +234,7 @@
             </path>
             <path>
               <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code-Katas" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -259,7 +243,7 @@
             </path>
             <path>
               <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code-Katas" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -269,7 +253,7 @@
             </path>
             <path>
               <item name="Code-Katas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Code-Katas" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Code-Katas" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -283,6 +267,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -300,7 +285,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547832346612" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547862770329" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -756,10 +741,10 @@
     <option name="totallyTimeSpent" value="130158000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22103004" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2524" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -768,13 +753,13 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.34096387" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.34047437" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.23855421" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.24942617" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007153" side_tool="true" weight="0.34096387" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32650602" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
@@ -871,22 +856,9 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/arraysandlists/AddElementToStartOfList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/MessAbout.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/stringexpression/StringExpressionObject.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="2237" column="18" selection-start-line="2237" selection-start-column="18" selection-end-line="2237" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/lang/String.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/linkedlists/AppendItemToEndOfList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -974,13 +946,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/util/stream/Stream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="374" column="14" selection-start-line="374" selection-start-column="14" selection-end-line="374" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/util/stream/Stream.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/challenges/sortedyesnohow/SortedYesNoHow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1001,13 +967,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/lambdasKata.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/lambdaskata/LambdasKata.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/lambdaskata/LambdasKataTest.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/util/stream/Collectors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="228" column="29" selection-start-line="228" selection-start-column="29" selection-end-line="228" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/util/stream/Collectors.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/autotrader/randomchallenges/lambdaskata/OddNumberRemoverTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1097,20 +1057,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-258">
-          <caret line="118" column="19" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/lang/Class.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/src.zip!/java/lang/Object.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/ComputerChoice.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/vegetable/Vegetable.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1138,13 +1086,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/UserInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-start-column="2" selection-end-line="21" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/UserInterface.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/mineral/Coal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1152,17 +1094,6 @@
           <folding>
             <element signature="e#162#163#0" expanded="true" />
             <element signature="e#190#191#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Cat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#167#168#0" expanded="true" />
-            <element signature="e#194#195#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1220,27 +1151,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/Question.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/Choice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/QuestionBank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/choices/animal/Cat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#167#168#0" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/QuestionsBank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#325#326#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/autotrader/randomchallenges/animalvegetablemineral/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="33" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

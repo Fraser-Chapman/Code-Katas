@@ -6,25 +6,17 @@ import uk.co.autotrader.randomchallenges.animalvegetablemineral.choices.Computer
 import java.util.Scanner;
 
 public class Game {
-    private static final String QUESTION_1 = "Animal, Vegetable or Mineral?";
-    private static final String QUESTION_2 = "Does it have fur?";
-    private static final String QUESTION_3 = "How many legs?";
-    private static final String QUESTION_4 = "question 4";
-    private static final String QUESTION_5 = "question 5";
-    private static final String QUESTION_6 = "question 6";
-
     private Scanner scanner = new Scanner(System.in);
     private final Choice choice;
 
     private boolean hasGuessed = false;
     private final String[][] questionsArray;
 
-
     public Game() {
         ComputerChoice computer = new ComputerChoice();
         choice = computer.selectRandomChoice();
-
-        questionsArray = new String[][]{{QUESTION_1, choice.getType()}, {QUESTION_2, choice.hasFur().toString()}, {QUESTION_3, choice.getNumberOfLegs().toString()}};
+        QuestionsBank questionsBank = new QuestionsBank(choice);
+        questionsArray = questionsBank.questionsArray;
     }
 
     private void printQuestions() {
