@@ -12,7 +12,7 @@ public class Game {
     private boolean hasGuessed = false;
     private final String[][] questionsArray;
 
-    public Game() {
+    private Game() {
         ComputerChoice computer = new ComputerChoice();
         choice = computer.selectRandomChoice();
         QuestionsBank questionsBank = new QuestionsBank(choice);

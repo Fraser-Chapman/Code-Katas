@@ -10,6 +10,7 @@ public class QuestionsBank {
     private static final String QUESTION_4 = "Is it a domesticated animal?";
     private static final String QUESTION_5 = "Does it have a tail?";
     private static final String QUESTION_6 = "Is is a root vegetable?";
+    private static final String QUESTION_7 = "Does animal only eat meat?";
 
 
     public final String[][] questionsArray;
@@ -25,7 +26,8 @@ public class QuestionsBank {
                 {QUESTION_3, choice.getNumberOfLegs().toString()},
                 {QUESTION_4, choice.isDomesticated().toString()},
                 {QUESTION_5, choice.hasTail().toString()},
-                {QUESTION_6, choice.isRootVegetable().toString()}
+                {QUESTION_6, choice.isRootVegetable().toString()},
+                {QUESTION_7, choice.isCarnivore().toString()}
         };
 
         return array;
